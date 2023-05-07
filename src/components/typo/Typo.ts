@@ -18,6 +18,7 @@ export const Text = styled.p<TextProps>`
   font-size: ${toRem(12)};
   font-weight: 600;
   text-align: ${({ align }) => align};
+  line-height: ${toRem(15)};
 `;
 
 export const SubText = styled.p<TextProps>`
@@ -25,4 +26,5 @@ export const SubText = styled.p<TextProps>`
   font-size: ${toRem(10)};
   font-weight: 500;
   text-align: ${({ align }) => align};
+  line-height: ${toRem(12)};
 `;
