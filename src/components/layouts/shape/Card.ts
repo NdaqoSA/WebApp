@@ -45,7 +45,7 @@ export const CardTextHeader = styled.div`
   margin-bottom: 20px;
 `;
 export const CardTextBottom = styled.div`
-  padding-inline: 37px;
+  padding-inline: 35px;
   margin-bottom: 15px;
 `;
 
