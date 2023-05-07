@@ -12,7 +12,7 @@ export const Card = styled.div`
   position: relative;
   max-width: 327px;
   width: 100%;
-  height: 355px;
+  height: auto;
   display: flex;
   flex-direction: column;
   border-radius: ${dimensions.radius};
