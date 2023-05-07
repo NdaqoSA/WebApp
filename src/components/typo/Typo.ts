@@ -16,7 +16,7 @@ export const TextLogo = styled.h1`
 export const Text = styled.p<TextProps>`
   color: ${color.text_color_trans};
   font-size: ${toRem(12)};
-  font-weight: 500;
+  font-weight: 600;
   text-align: ${({ align }) => align};
   line-height: ${toRem(15)};
 `;
