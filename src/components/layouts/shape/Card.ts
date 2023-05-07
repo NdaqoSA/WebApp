@@ -100,7 +100,7 @@ export const DefaultButton = styled(Link)`
 `;
 export const CardRegisterButton = styled(DefaultButton)`
   background-color: ${color.grey_trans};
-  margin-bottom: 15px;
+  margin-bottom: 14px;
   color: ${color.text_color};
   font-size: ${toRem(14)};
 
