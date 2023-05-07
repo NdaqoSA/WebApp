@@ -14,6 +14,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${color.bg};
+  padding: 1rem 0.5rem;
 `;
 
 export const FlexRow = styled.div<FlexRowProps>`
