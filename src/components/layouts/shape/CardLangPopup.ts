@@ -34,6 +34,4 @@ export const CardSearch = styled.div`
   background-color: ${color.grey_trans};
   margin-inline: auto;
 `;
-export const CardSearchCancel = styled.div`
-  display: flex;
-`;
+export const CardSearchCancel = styled.div``;

@@ -10,7 +10,7 @@ interface CardButtonProps {
 
 export const Card = styled.div`
   position: relative;
-  max-width: 325px;
+  max-width: 327px;
   width: 100%;
   height: 355px;
   display: flex;
@@ -102,19 +102,20 @@ export const CardRegisterButton = styled(DefaultButton)`
   background-color: ${color.grey_trans};
   margin-bottom: 15px;
   color: ${color.text_color};
+  font-size: ${toRem(14)};
 
   &:hover {
     color: ${color.text_color};
     background: ${color.grey};
   }
   & > * {
-    font-size: ${toRem(14)};
     font-weight: 500;
   }
 `;
 export const CardSigntButton = styled(DefaultButton)`
   background-color: ${color.blue};
   color: ${color.text_white};
+  font-size: ${toRem(14)};
 
   &:hover {
     color: ${color.text_white};

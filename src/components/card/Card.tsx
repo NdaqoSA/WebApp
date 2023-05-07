@@ -21,7 +21,7 @@ import { useState } from "react";
 import CardLangPopup from "./CardLangPopup";
 
 const Card = () => {
-  const [openLang, setOpenLang] = useState(true);
+  const [openLang, setOpenLang] = useState(false);
   return (
     <CardShape>
       <>
