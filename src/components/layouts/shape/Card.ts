@@ -142,6 +142,7 @@ export const CardButtonLang = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
   &:hover {
     background-color: ${color.blue_trans_2};
     color: ${color.blue};
