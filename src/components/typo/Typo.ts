@@ -8,7 +8,7 @@ interface TextProps {
 
 export const TextLogo = styled.h1`
   font-size: ${toRem(13)};
-  color: ${color.black};
+  color: ${color.text_color};
   font-weight: 700;
   text-align: center;
 `;
@@ -16,7 +16,7 @@ export const TextLogo = styled.h1`
 export const Text = styled.p<TextProps>`
   color: ${color.text_color_trans};
   font-size: ${toRem(12)};
-  font-weight: 600;
+  font-weight: 500;
   text-align: ${({ align }) => align};
   line-height: ${toRem(15)};
 `;
@@ -24,7 +24,7 @@ export const Text = styled.p<TextProps>`
 export const SubText = styled.p<TextProps>`
   color: ${color.text_color};
   font-size: ${toRem(10)};
-  font-weight: 500;
+  font-weight: 600;
   text-align: ${({ align }) => align};
   line-height: ${toRem(12)};
 `;
