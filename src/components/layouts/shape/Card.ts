@@ -59,7 +59,7 @@ export const CardButton = styled.div`
 const DefaultCardButton = styled(Link)<CardButtonProps>`
   width: 57px;
   height: 46px;
-  transition: ease 0.4s;
+  transition: ease 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,7 +97,7 @@ export const DefaultButton = styled(Link)`
   height: 52px;
   font-weight: 600;
   border-radius: ${dimensions.card_radius_btn};
-  transition: ease 0.4s;
+  transition: ease 0.2s;
 `;
 export const CardRegisterButton = styled(DefaultButton)`
   background-color: ${color.grey_trans};

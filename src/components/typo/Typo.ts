@@ -24,7 +24,7 @@ export const Text = styled.p<TextProps>`
 export const SubText = styled.p<TextProps>`
   color: ${color.text_color};
   font-size: ${toRem(10)};
-  font-weight: 600;
+  font-weight: 500;
   text-align: ${({ align }) => align};
   line-height: ${toRem(12)};
 `;
