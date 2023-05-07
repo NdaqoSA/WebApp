@@ -95,6 +95,7 @@ export const DefaultButton = styled(Link)`
   gap: ${toRem(3)};
   width: 100%;
   height: 52px;
+  font-weight: 500;
   border-radius: ${dimensions.card_radius_btn};
   transition: ease 0.4s;
 `;
