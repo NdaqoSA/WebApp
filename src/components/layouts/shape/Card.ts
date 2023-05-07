@@ -95,7 +95,7 @@ export const DefaultButton = styled(Link)`
   gap: ${toRem(3)};
   width: 100%;
   height: 52px;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: ${dimensions.card_radius_btn};
   transition: ease 0.4s;
 `;
@@ -108,9 +108,6 @@ export const CardRegisterButton = styled(DefaultButton)`
   &:hover {
     color: ${color.text_color};
     background: ${color.grey};
-  }
-  & > * {
-    font-weight: 500;
   }
 `;
 export const CardSigntButton = styled(DefaultButton)`
