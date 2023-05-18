@@ -12,16 +12,26 @@ import {
   ExitCardButton,
 } from "../layouts/shape/Card";
 import { SubText, Text, TextLogo } from "../typo/Typo";
-
 import { RxCross2, RxArrowLeft } from "react-icons/rx";
-import { RiAccountPinCircleFill } from "react-icons/ri";
-import { MdOutlineEditNote } from "react-icons/md";
-import { IoLanguageOutline } from "react-icons/io5";
-import { useState } from "react";
+import EditInput from "../icons/EditInput";
+import Language from "../icons/Language";
+import UserAccount from "../icons/UserAccount";
+import { useEffect, useState } from "react";
 import CardLangPopup from "./CardLangPopup";
+import Logo from "../icons/Logo";
 
 const Card = () => {
   const [openLang, setOpenLang] = useState(false);
+  const [alter, setAlter] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAlter(!alter);
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [alter]);
+
   return (
     <CardShape>
       <>
@@ -30,7 +40,7 @@ const Card = () => {
             <RxArrowLeft />
           </BackCardButton>
           <CardTitle>
-            <TextLogo>Ndaqo.com</TextLogo>
+            {alter ? <TextLogo>Ndaqo.com</TextLogo> : <Logo w={72} h={24} />}
           </CardTitle>
           <ExitCardButton to={""}>
             <RxCross2 />
@@ -43,12 +53,12 @@ const Card = () => {
           </Text>
         </CardTextHeader>
         <CardButton>
-          <CardRegisterButton to={""}>
-            <RiAccountPinCircleFill size={21} />
+          <CardRegisterButton to={"/register"}>
+            <EditInput w={29} h={18} />
             Je n'ai pas de compte
           </CardRegisterButton>
-          <CardSigntButton to={""}>
-            <MdOutlineEditNote size={21} />
+          <CardSigntButton to={"/login"}>
+            <UserAccount w={21} h={18} />
             J’ai déjà un compte
           </CardSigntButton>
         </CardButton>
@@ -59,7 +69,7 @@ const Card = () => {
           </SubText>
         </CardTextBottom>
         <CardButtonLang to={""} onClick={() => setOpenLang(true)}>
-          <IoLanguageOutline size={16} />
+          <Language w={13} h={13} />
           Changer de langue
         </CardButtonLang>
       </>

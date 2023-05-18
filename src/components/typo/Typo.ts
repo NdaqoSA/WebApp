@@ -3,7 +3,9 @@ import { color } from "../../utils/styles/color";
 import { toRem } from "../../utils/styles/convert";
 
 interface TextProps {
-  align: "left" | "center" | "right";
+  align?: "left" | "center" | "right";
+  size?: number;
+  weight?: number;
 }
 
 export const TextLogo = styled.h1`
@@ -15,9 +17,9 @@ export const TextLogo = styled.h1`
 
 export const Text = styled.p<TextProps>`
   color: ${color.text_color_trans};
-  font-size: ${toRem(12)};
-  font-weight: 600;
-  text-align: ${({ align }) => align};
+  font-size: ${(props) => (props.size ? toRem(props.size) : toRem(12))};
+  font-weight: ${(props) => (props.weight ? props.weight : 600)};
+  text-align: ${({ align }) => (align ? align : "left")};
   line-height: ${toRem(15)};
 `;
 
