@@ -5,26 +5,31 @@ import {
   InputTextLabel,
 } from "../layouts/input/input";
 
-const Input = () => {
+// interface Props {
+//   defaultValue: string;
+//   setValue: string;
+// }
+
+const Input = ({}) => {
   const [disabled, setDisabled] = useState(false);
   const [value, setValue] = useState("");
   const inputContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        inputContainerRef.current &&
-        !inputContainerRef.current.contains(event.target as Node) &&
-        !value
-      ) {
-        setDisabled(false);
+      const current = inputContainerRef.current;
+      if (current && !current.contains(event.target as Node)) {
+        if (value) {
+          inputRef.current?.blur();
+          return;
+        }
+
+        return setDisabled(false);
       }
-      if (
-        inputContainerRef.current &&
-        !inputContainerRef.current.contains(event.target as Node) &&
-        value
-      ) {
-        inputRef.current?.blur();
+
+      if (current && current.contains(event.target as Node)) {
+        return inputRef.current?.focus();
       }
     };
 
@@ -33,7 +38,7 @@ const Input = () => {
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [value]);
 
   return (
     <InputContainer
@@ -46,6 +51,7 @@ const Input = () => {
         <span> *</span>
       </InputTextLabel>
       <InputText
+        type="text"
         ref={inputRef}
         active={disabled}
         value={value}

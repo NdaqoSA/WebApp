@@ -1,4 +1,5 @@
 import Input from "../../input/Input";
+import InputPassword from "../../input/InputPassword";
 import {
   Form,
   FormInputContainer,
@@ -17,7 +18,7 @@ const FormLogin = () => {
       </FormTextContainer>
       <FormInputContainer>
         <Input />
-        <Input />
+        <InputPassword />
         <InputLoginButton active>Se connecter</InputLoginButton>
       </FormInputContainer>
     </Form>

@@ -51,6 +51,7 @@ export const InputContainer = styled.div<InputProps>`
   border-radius: 15px;
   border: 1px solid
     ${({ active }) => (active ? color.deep_blue_2 : color.border)};
+  overflow: hidden;
 `;
 
 export const InputTextLabel = styled.label<InputProps>`
@@ -64,32 +65,55 @@ export const InputTextLabel = styled.label<InputProps>`
   transform: translateX(${({ active }) => (active ? 0 : "-50%")})
     translateY(${({ active }) => (active ? 0 : "-50%")});
   transition: linear 0.3s;
+  pointer-events: none;
 
   & span {
     color: ${({ active }) => (active ? color.red : color.fade_grey)};
   }
 `;
 
+export const InputIcon = styled.div<InputProps>`
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  width: 34px;
+  height: 32px;
+  border-radius: 5px;
+  transform: translateY(-50%);
+  background: dodgerblue;
+  pointer-events: ${({ active }) => (active ? "visible" : "none")};
+  opacity: ${({ active }) => (active ? 1 : 0)};
+  transition: linear 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const InputText = styled.input<InputProps>`
   position: absolute;
   top: ${({ active }) => (active ? "20px" : "50%")};
   left: 50%;
-  width: 307px;
-  height: 25px;
+  width: ${({ active }) => (active ? "307px" : "100%")};
+  height: ${({ active }) => (active ? "25px" : "100%")};
   caret-color: ${color.deep_blue_2};
   transform: translateX(-50%)
     translateY(${({ active }) => (active ? 0 : "-50%")});
-
   background: transparent;
   border: none;
   color: ${color.text_color_2};
   font-size: 16px;
-  /* display: ${({ active }) => (active ? "block" : "none")}; */
-  transition: ease 0.4s;
+  display: ${({ active }) => (active ? "block" : "none")};
+  transition: ease 0.3s;
 
   &:focus {
     outline: none;
   }
+`;
+
+export const InputTextPassword = styled(InputText)`
+  left: 12px;
+  width: ${({ active }) => (active ? "260px" : "100%")};
+  transform: translateX(0);
 `;
 
 export const FormTextContainer = styled.div<FormContainerProps>`

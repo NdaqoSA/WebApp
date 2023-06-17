@@ -17,7 +17,7 @@ const ToolTips = ({ username }: Props) => {
       <ToolTipsRectanle />
       <ToolTipsText>
         <Text size={14}>{username}</Text>
-        <Check w={15} h={14} />
+        <Check w={16} h={15} />
       </ToolTipsText>
       <ToolTipsArrow />
     </ToolTipsContainer>

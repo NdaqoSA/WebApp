@@ -18,6 +18,7 @@ import { Text, TextLogo } from "../typo/Typo";
 import Logo from "../icons/Logo";
 import ToolTips from "../Tooltips/ToolTips";
 import FormLogin from "../form/formLogin/FormLogin";
+import AuthSlider from "../slider/AuthSlider";
 
 const CardLogin = () => {
   const [alter, setAlter] = useState(false);
@@ -51,13 +52,15 @@ const CardLogin = () => {
         <CardToolTip>
           <ToolTips username="Roberson Mafoua" />
         </CardToolTip>
-        <CardSlideImage />
+        <CardSlideImage>
+          <AuthSlider />
+        </CardSlideImage>
       </CardProfile>
       <FormLogin />
       <CardFooter>
         <Text size={10} align="center">
           En continuant, tu acceptes les
-          <span> Conditions générales d’utilisation</span>
+          <span> Conditions générales d’utilisation </span>
           de Ndaqo. Lire notre
           <span> Politique de confidentialité.</span>
         </Text>

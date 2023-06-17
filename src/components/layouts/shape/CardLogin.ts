@@ -1,12 +1,6 @@
 import styled from "styled-components";
 import { color } from "../../../utils/styles/color";
 import { dimensions } from "../../../utils/styles/dimensions";
-// import { Link } from "react-router-dom";
-// import { toRem } from "../../../utils/styles/convert";
-
-// interface CardButtonProps {
-//   disable?: true;
-// }
 
 export const Card = styled.div`
   position: relative;
@@ -46,7 +40,6 @@ export const CardSlideImage = styled.div`
   height: 200px;
   margin-top: 11px;
   padding-inline: 30px;
-  background: #000;
 `;
 
 export const CardFooter = styled.div`

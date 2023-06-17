@@ -5,7 +5,8 @@ import {
   CardTitle,
   ExitCardButton,
 } from "../layouts/shape/Card";
-import { TextLogo } from "../typo/Typo";
+
+import { TextLogo, Text } from "../typo/Typo";
 import {
   CardList,
   CardListLang,
@@ -15,18 +16,20 @@ import {
   CardSearchContainer,
   Lang,
 } from "../layouts/shape/CardLangPopup";
-import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Logo from "../icons/Logo";
+import Search from "../icons/Search";
+import Delete from "../icons/Delete";
 
 interface Props {
   setOpenLang: Function;
 }
 
 const CardLangPopup = ({ setOpenLang }: Props) => {
-  const [focus, setFocus] = useState(false);
-
-  const [alter, setAlter] = useState(false);
+  const [enable, setEnable] = useState<boolean>(false);
+  // const [focus, setFocus] = useState<boolean>(false);
+  const [alter, setAlter] = useState<boolean>(false);
+  const [searchText, setSearchText] = useState<string>("");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,14 +53,27 @@ const CardLangPopup = ({ setOpenLang }: Props) => {
       </CardHeader>
       <CardList>
         <CardSearchContainer>
-          <CardSearch>
+          <CardSearch active={enable}>
             <small>
-              <FaSearch />
-              Recherche
+              <Search w={15} h={15} />
+              <span>Recherche</span>
             </small>
-            <input type="text" onFocus={() => setFocus(true)} />
+            <span onClick={() => setSearchText("")}>
+              <Delete w={15} h={15} />
+            </span>
+            <input
+              type="text"
+              onChange={(e) => setSearchText(e.target.value)}
+              onClick={() => setEnable(true)}
+              // onKeyUp={() => setFocus(true)}
+              value={searchText}
+            />
           </CardSearch>
-          <CardSearchCancel></CardSearchCancel>
+          <CardSearchCancel active={enable}>
+            <Text size={14} onClick={() => setEnable(false)}>
+              Annuler
+            </Text>
+          </CardSearchCancel>
         </CardSearchContainer>
         <CardListLang>
           {data.map((item) => (
