@@ -2,7 +2,10 @@ import styled from "styled-components";
 import { color } from "../../../utils/styles/color";
 import { dimensions } from "../../../utils/styles/dimensions";
 
-export const Card = styled.div`
+interface CardProps {
+  border: "default" | "back" | "exit";
+}
+export const Card = styled.div<CardProps>`
   position: relative;
   max-width: 457px;
   width: 100%;
@@ -11,7 +14,13 @@ export const Card = styled.div`
   flex-direction: column;
   border-radius: ${dimensions.radius};
   background-color: ${color.bg};
-  border: 1px solid ${color.border};
+  border: 1px solid
+    ${({ border }) =>
+      border === "default"
+        ? color.border
+        : border === "back"
+        ? color.deep_blue_2
+        : color.red};
   box-shadow: inset 0px 0px 15px rgba(247, 248, 252, 0.4),
     inset 0px 0px 0px 1px rgba(247, 248, 252, 0.15);
   overflow: hidden;

@@ -9,19 +9,34 @@ import {
 } from "../layouts/shape/CardLogin";
 import {
   BackCardButton,
+  ButtonBackTooltip,
+  ButtonTooltip,
   CardHeader,
   CardTitle,
   ExitCardButton,
 } from "../layouts/shape/Card";
-import { RxArrowLeft, RxCross2 } from "react-icons/rx";
 import { Text, TextLogo } from "../typo/Typo";
 import Logo from "../icons/Logo";
 import ToolTips from "../Tooltips/ToolTips";
 import FormLogin from "../form/formLogin/FormLogin";
 import AuthSlider from "../slider/AuthSlider";
+import Back from "../icons/Back";
+import Exit from "../icons/Exit";
 
 const CardLogin = () => {
   const [alter, setAlter] = useState(false);
+  const [exitAction, setExitAction] = useState(false);
+  const [backAction, setBackAction] = useState(false);
+
+  const currentBorder = () => {
+    if (backAction) {
+      return "back";
+    }
+    if (exitAction) {
+      return "exit";
+    }
+    return "default";
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,16 +46,32 @@ const CardLogin = () => {
     return () => clearInterval(interval);
   }, [alter]);
   return (
-    <CardShape>
+    <CardShape border={currentBorder()}>
       <CardHeader style={{ marginBottom: 5 }}>
-        <BackCardButton to={""}>
-          <RxArrowLeft />
+        <BackCardButton
+          to={"#"}
+          onMouseEnter={() => setBackAction(true)}
+          onMouseLeave={() => setBackAction(false)}
+        >
+          <Back w={16} h={12} />
         </BackCardButton>
         <CardTitle>
-          {alter ? <TextLogo>Ndaqo.com</TextLogo> : <Logo w={72} h={24} />}
+          {exitAction ? (
+            <ButtonTooltip>Page d'acceuil</ButtonTooltip>
+          ) : backAction ? (
+            <ButtonBackTooltip>Retour</ButtonBackTooltip>
+          ) : alter ? (
+            <TextLogo>Ndaqo.com</TextLogo>
+          ) : (
+            <Logo w={72} h={24} />
+          )}
         </CardTitle>
-        <ExitCardButton to={""}>
-          <RxCross2 />
+        <ExitCardButton
+          to={"/"}
+          onMouseEnter={() => setExitAction(true)}
+          onMouseLeave={() => setExitAction(false)}
+        >
+          <Exit w={12} h={12} />
         </ExitCardButton>
       </CardHeader>
       <CardProfile>

@@ -3,12 +3,16 @@ import { color } from "../../../utils/styles/color";
 import { dimensions } from "../../../utils/styles/dimensions";
 import { Link } from "react-router-dom";
 import { toRem } from "../../../utils/styles/convert";
-
+import { Text } from "../../typo/Typo";
 interface CardButtonProps {
   disable?: true;
 }
 
-export const Card = styled.div`
+interface CardProps {
+  border: "default" | "hide" | "back" | "exit";
+}
+
+export const Card = styled.div<CardProps>`
   position: relative;
   max-width: 327px;
   width: 100%;
@@ -17,7 +21,15 @@ export const Card = styled.div`
   flex-direction: column;
   border-radius: ${dimensions.radius};
   background-color: ${color.bg};
-  border: 1px solid ${color.border};
+  border: 1px solid
+    ${({ border }) =>
+      border === "default"
+        ? color.border
+        : border === "hide"
+        ? "transparent"
+        : border === "back"
+        ? color.deep_blue_2
+        : color.red};
   box-shadow: inset 0px 0px 15px rgba(247, 248, 252, 0.4),
     inset 0px 0px 0px 1px rgba(247, 248, 252, 0.15);
   overflow: hidden;
@@ -38,6 +50,17 @@ export const CardTitle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const ButtonTooltip = styled(Text)`
+  color: ${color.red};
+  font-weight: 700 !important;
+  font-size: 13px !important;
+`;
+export const ButtonBackTooltip = styled(Text)`
+  color: ${color.deep_blue_2};
+  font-weight: 700 !important;
+  font-size: 13px !important;
 `;
 
 export const CardTextHeader = styled.div`
@@ -70,21 +93,36 @@ const DefaultCardButton = styled(Link)<CardButtonProps>`
 
 export const BackCardButton = styled(DefaultCardButton)<CardButtonProps>`
   border-radius: 16px 0;
+  transition: linear 0.2s;
   background: ${({ disable }) => (disable ? color.inactive : color.blue_trans)};
-  color: ${({ disable }) => (disable ? color.inactive_text : color.blue)};
+
+  & path {
+    transition: linear 0.2s;
+    fill: ${({ disable }) => (disable ? color.inactive_text : color.blue)};
+  }
 
   &:hover {
     background: ${({ disable }) => (disable ? color.inactive : color.blue)};
-    color: ${({ disable }) => (disable ? color.inactive_text : color.white)};
+  }
+
+  &:hover path {
+    fill: ${({ disable }) => (disable ? color.inactive_text : color.white)};
   }
 `;
 export const ExitCardButton = styled(DefaultCardButton)<CardButtonProps>`
   border-radius: 0px 16px;
+  transition: linear 0.2s;
   background: ${({ disable }) => (disable ? color.inactive : color.red_trans)};
-  color: ${({ disable }) => (disable ? color.inactive_text : color.red)};
+  & path {
+    fill: ${({ disable }) => (disable ? color.inactive_text : color.red)};
+    transition: linear 0.2s;
+  }
   &:hover {
     background: ${({ disable }) => (disable ? color.inactive : color.red)};
-    color: ${({ disable }) => (disable ? color.inactive_text : color.white)};
+  }
+
+  &:hover path {
+    fill: ${({ disable }) => (disable ? color.inactive_text : color.white)};
   }
 `;
 

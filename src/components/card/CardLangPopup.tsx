@@ -1,6 +1,7 @@
-import { RxArrowLeft, RxCross2 } from "react-icons/rx";
 import {
   BackCardButton,
+  ButtonBackTooltip,
+  ButtonTooltip,
   CardHeader,
   CardTitle,
   ExitCardButton,
@@ -8,28 +9,67 @@ import {
 
 import { TextLogo, Text } from "../typo/Typo";
 import {
+  CardCircleDeleteButton,
   CardList,
   CardListLang,
   CardPopup,
   CardSearch,
   CardSearchCancel,
   CardSearchContainer,
+  EmptyLang,
   Lang,
 } from "../layouts/shape/CardLangPopup";
 import { useEffect, useState } from "react";
 import Logo from "../icons/Logo";
 import Search from "../icons/Search";
 import Delete from "../icons/Delete";
+import SearchFailed from "../icons/SearchFailed";
+import Exit from "../icons/Exit";
+import Back from "../icons/Back";
 
 interface Props {
   setOpenLang: Function;
 }
 
+type Language = {
+  id: number;
+  language: string;
+}[];
+
 const CardLangPopup = ({ setOpenLang }: Props) => {
   const [enable, setEnable] = useState<boolean>(false);
-  // const [focus, setFocus] = useState<boolean>(false);
   const [alter, setAlter] = useState<boolean>(false);
-  const [searchText, setSearchText] = useState<string>("");
+  const [searchText, setSearchText] = useState<string | null>(null);
+  const [languages] = useState<Language>(data);
+  const [selectedLang, setSelectedLang] = useState(languages);
+  const [exitAction, setExitAction] = useState(false);
+  const [backAction, setBackAction] = useState(false);
+
+  useEffect(() => {
+    if (searchText) {
+      setSelectedLang(
+        languages.filter((lang) => {
+          if (
+            lang.language.toLowerCase().search(searchText.toLowerCase()) !== -1
+          ) {
+            return lang;
+          }
+        })
+      );
+    } else {
+      setSelectedLang(languages);
+    }
+  }, [searchText]);
+
+  const currentBorder = () => {
+    if (backAction) {
+      return "back";
+    }
+    if (exitAction) {
+      return "exit";
+    }
+    return "default";
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -39,16 +79,33 @@ const CardLangPopup = ({ setOpenLang }: Props) => {
     return () => clearInterval(interval);
   }, [alter]);
   return (
-    <CardPopup>
+    <CardPopup border={currentBorder()}>
       <CardHeader style={{ marginBottom: 10 }}>
-        <BackCardButton to={""} onClick={() => setOpenLang(false)}>
-          <RxArrowLeft />
+        <BackCardButton
+          to={"#"}
+          onClick={() => setOpenLang(false)}
+          onMouseEnter={() => setBackAction(true)}
+          onMouseLeave={() => setBackAction(false)}
+        >
+          <Back w={16} h={12} />
         </BackCardButton>
         <CardTitle>
-          {alter ? <TextLogo>Ndaqo.com</TextLogo> : <Logo w={72} h={24} />}
+          {exitAction ? (
+            <ButtonTooltip>Page d'acceuil</ButtonTooltip>
+          ) : backAction ? (
+            <ButtonBackTooltip>Retour</ButtonBackTooltip>
+          ) : alter ? (
+            <TextLogo>Ndaqo.com</TextLogo>
+          ) : (
+            <Logo w={72} h={24} />
+          )}
         </CardTitle>
-        <ExitCardButton to={""} disable>
-          <RxCross2 />
+        <ExitCardButton
+          to={"/"}
+          onMouseEnter={() => setExitAction(true)}
+          onMouseLeave={() => setExitAction(false)}
+        >
+          <Exit w={12} h={12} />
         </ExitCardButton>
       </CardHeader>
       <CardList>
@@ -58,28 +115,50 @@ const CardLangPopup = ({ setOpenLang }: Props) => {
               <Search w={15} h={15} />
               <span>Recherche</span>
             </small>
-            <span onClick={() => setSearchText("")}>
-              <Delete w={15} h={15} />
-            </span>
+            {searchText && (
+              <CardCircleDeleteButton onClick={() => setSearchText("")}>
+                <Delete w={15} h={15} />
+              </CardCircleDeleteButton>
+            )}
             <input
               type="text"
               onChange={(e) => setSearchText(e.target.value)}
               onClick={() => setEnable(true)}
-              // onKeyUp={() => setFocus(true)}
               value={searchText}
             />
           </CardSearch>
           <CardSearchCancel active={enable}>
-            <Text size={14} onClick={() => setEnable(false)}>
+            <Text
+              size={14}
+              onClick={() => {
+                setSearchText("");
+                setEnable(false);
+              }}
+            >
               Annuler
             </Text>
           </CardSearchCancel>
         </CardSearchContainer>
-        <CardListLang>
-          {data.map((item) => (
-            <Lang key={item.id}>{item.language}</Lang>
-          ))}
-        </CardListLang>
+        {selectedLang.length > 0 ? (
+          <CardListLang>
+            {selectedLang.map((item) => (
+              <Lang key={item.id}>{item.language}</Lang>
+            ))}
+          </CardListLang>
+        ) : (
+          <EmptyLang>
+            <Text size={15} weight={700} align="center">
+              Oups, aucune langue ne correspond à votre recherche
+              “Kikongodehsev”
+            </Text>
+            <Text size={11} weight={500} align="center">
+              Vérifiez la saisie ou essayez une nouvelle recherche
+            </Text>
+            <span>
+              <SearchFailed w={29} h={23} />
+            </span>
+          </EmptyLang>
+        )}
       </CardList>
     </CardPopup>
   );

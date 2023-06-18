@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Check from "../icons/Check";
 import {
   ToolTipsArrow,
@@ -12,8 +13,15 @@ interface Props {
 }
 
 const ToolTips = ({ username }: Props) => {
+  const [clickState, setClickState] = useState(false);
   return (
-    <ToolTipsContainer>
+    <ToolTipsContainer
+      click={clickState}
+      onMouseDown={() => {
+        setClickState(true);
+      }}
+      onMouseUp={() => setClickState(false)}
+    >
       <ToolTipsRectanle />
       <ToolTipsText>
         <Text size={14}>{username}</Text>

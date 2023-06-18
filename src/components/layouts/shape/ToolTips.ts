@@ -1,26 +1,38 @@
 import styled from "styled-components";
 import { color } from "../../../utils/styles/color";
 
-export const ToolTipsContainer = styled.div`
+interface ToolTipsProps {
+  click: boolean;
+}
+
+export const ToolTipsContainer = styled.div<ToolTipsProps>`
   position: relative;
   width: 167px;
   height: 32px;
   &:hover p {
-    color: ${color.white};
+    color: ${({ click }) => (click ? color.light_grey : color.blue_violet)};
+    background: ${({ click }) =>
+      click ? color.blue_violet : color.light_grey};
   }
-  &:hover path {
-    fill: ${color.white};
+
+  & path {
+    fill: ${({ click }) => (click ? color.light_grey : color.blue_violet)};
   }
 
   &:hover div:first-child {
-    background: ${color.blue_violet};
+    background: ${({ click }) =>
+      click ? color.blue_violet : color.light_grey};
+    border: 1px solid ${color.blue_violet};
   }
 
   &:hover div:last-child {
-    background: ${color.blue_violet};
+    border: 1px solid ${color.blue_violet};
+    background: ${({ click }) =>
+      click ? color.blue_violet : color.light_grey};
   }
   &:hover div:last-child::before {
-    background: ${color.blue_violet};
+    background: ${({ click }) =>
+      click ? color.blue_violet : color.light_grey};
   }
 `;
 
@@ -29,7 +41,7 @@ export const ToolTipsRectanle = styled.div`
   width: 100%;
   height: 32px;
   background: ${color.light_grey};
-  border: 1px solid ${color.blue_violet};
+  border: 1px solid ${color.deep_grey};
   border-radius: 8px;
   z-index: 1;
   transition: linear 0.2s;
@@ -66,7 +78,7 @@ export const ToolTipsArrow = styled.div`
   width: 30px;
   height: 15px;
   background: ${color.light_grey};
-  border: 1px solid ${color.blue_violet};
+  border: 1px solid ${color.deep_grey};
   border-radius: 2px;
   z-index: 1;
   transition: linear 0.2s;

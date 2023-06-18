@@ -7,7 +7,11 @@ interface CardSearchProps {
   active: boolean;
 }
 
-export const CardPopup = styled.div`
+interface CardProps {
+  border: "default" | "back" | "exit";
+}
+
+export const CardPopup = styled.div<CardProps>`
   position: absolute;
   top: 0;
   left: 0;
@@ -20,6 +24,13 @@ export const CardPopup = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: ${dimensions.radius};
+  border: 1px solid
+    ${({ border }) =>
+      border === "default"
+        ? color.border
+        : border === "back"
+        ? color.deep_blue_2
+        : color.red};
 `;
 
 export const CardList = styled.div`
@@ -77,8 +88,14 @@ export const CardSearch = styled.div<CardSearchProps>`
       transition: linear 0.2s;
     }
 
-    & path {
+    & small path {
       fill: ${({ active }) => (active ? color.text_color_2 : color.deep_grey)};
+      transition: linear 0.2s;
+    }
+
+    & span path {
+      background-color: yellow;
+      fill: green;
     }
 
     & * {
@@ -123,12 +140,38 @@ export const CardSearchCancel = styled.div<CardSearchProps>`
   }
 `;
 
+export const CardCircleDeleteButton = styled.span`
+  transition: linear 0.2s;
+
+  &:hover path {
+    fill: ${color.deep_blue_2};
+  }
+`;
+
 export const CardListLang = styled.div`
   display: flex;
   flex-direction: column;
   height: auto;
   margin-top: 10px;
   padding-inline: 58px;
+`;
+
+export const EmptyLang = styled.div`
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 76px;
+  padding-inline: 24px;
+
+  & p:first-child {
+    color: ${color.text_color_2};
+    margin-bottom: 5px;
+  }
+
+  & p:nth-child(2) {
+    margin-bottom: 6px;
+  }
 `;
 
 export const Lang = styled.p`

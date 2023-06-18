@@ -7,9 +7,8 @@ import Img5 from "../../assets/images/im5.jpg";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-
 // import required modules
-import { EffectCoverflow } from "swiper";
+import { EffectCoverflow, Scrollbar } from "swiper";
 import {
   SliderContainer,
   Swipe,
@@ -34,10 +33,11 @@ const AuthSlider = () => {
           depth: 200,
           modifier: 5,
         }}
+        scrollbar={{ draggable: true }}
         onSlideChange={(swiper: { realIndex: SetStateAction<number> }) => {
           setCurrentState(swiper.realIndex);
         }}
-        modules={[EffectCoverflow]}
+        modules={[EffectCoverflow, Scrollbar]}
         className="mySwiper"
       >
         {datas.map(({ img }, id) => (
