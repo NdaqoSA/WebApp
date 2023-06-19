@@ -94,7 +94,7 @@ const Card = () => {
             )}
           </CardTitle>
           <ExitCardButton
-            to={"/home"}
+            to={"/"}
             onMouseEnter={() => setExitAction(true)}
             onMouseLeave={() => setExitAction(false)}
           >

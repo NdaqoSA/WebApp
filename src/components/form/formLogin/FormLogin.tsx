@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Input from "../../input/Input";
 import InputPassword from "../../input/InputPassword";
 import {
@@ -9,6 +10,22 @@ import {
 import { Text } from "../../typo/Typo";
 
 const FormLogin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isValid, setIsValid] = useState(false);
+
+  const validateInput = () => {
+    console.log(password, " ", email);
+    if (password && email) {
+      setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
+  };
+
+  useEffect(() => {
+    validateInput();
+  }, [password, email]);
   return (
     <Form pi={60}>
       <FormTextContainer>
@@ -17,9 +34,9 @@ const FormLogin = () => {
         </Text>
       </FormTextContainer>
       <FormInputContainer>
-        <Input />
-        <InputPassword />
-        <InputLoginButton active>Se connecter</InputLoginButton>
+        <Input getValue={setEmail} />
+        <InputPassword getValue={setPassword} />
+        <InputLoginButton active={isValid}>Se connecter</InputLoginButton>
       </FormInputContainer>
     </Form>
   );

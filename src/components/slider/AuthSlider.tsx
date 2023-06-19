@@ -15,10 +15,18 @@ import {
   SwiperImage,
   SwiperSlider,
 } from "../layouts/shape/Slider";
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 
-const AuthSlider = () => {
+interface AuthCurrentProps {
+  getUserIndex: Function;
+}
+
+const AuthSlider = ({ getUserIndex }: AuthCurrentProps) => {
   const [currentState, setCurrentState] = useState(0);
+
+  useEffect(() => {
+    getUserIndex(datas[currentState]);
+  }, [currentState]);
   return (
     <SliderContainer>
       <Swipe

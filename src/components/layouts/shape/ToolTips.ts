@@ -9,6 +9,13 @@ export const ToolTipsContainer = styled.div<ToolTipsProps>`
   position: relative;
   width: 167px;
   height: 32px;
+  cursor: pointer;
+
+  & > * {
+    cursor: pointer;
+  }
+  &:hover p {
+  }
   &:hover p {
     color: ${({ click }) => (click ? color.light_grey : color.blue_violet)};
     background: ${({ click }) =>
@@ -16,6 +23,7 @@ export const ToolTipsContainer = styled.div<ToolTipsProps>`
   }
 
   & path {
+    cursor: pointer;
     fill: ${({ click }) => (click ? color.light_grey : color.blue_violet)};
   }
 
@@ -59,6 +67,7 @@ export const ToolTipsText = styled.div`
   align-items: center;
   gap: 3px;
   transition: linear 0.2s;
+  cursor: pointer;
 
   & path {
     transition: linear 0.2s;
@@ -66,7 +75,7 @@ export const ToolTipsText = styled.div`
   & p {
     transition: linear 0.2s;
     text-transform: capitalize;
-    cursor: default;
+    cursor: pointer;
   }
 `;
 

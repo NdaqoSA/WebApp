@@ -7,6 +7,11 @@ interface CardSearchProps {
   active: boolean;
 }
 
+interface CardCancelProps {
+  active: boolean;
+  click: boolean;
+}
+
 interface CardProps {
   border: "default" | "back" | "exit";
 }
@@ -125,7 +130,7 @@ export const CardSearch = styled.div<CardSearchProps>`
     }
   }
 `;
-export const CardSearchCancel = styled.div<CardSearchProps>`
+export const CardSearchCancel = styled.div<CardCancelProps>`
   width: ${({ active }) => (active ? "64px" : "11px")};
   height: 39px;
   transition: linear 0.2s;
@@ -134,9 +139,14 @@ export const CardSearchCancel = styled.div<CardSearchProps>`
   align-items: center;
   & > p {
     transform: translateX(${({ active }) => (active ? 0 : "10px")});
+    color: ${({ click }) => (click ? color.deep_blue : color.text_color_trans)};
     opacity: ${({ active }) => (active ? 1 : 0)};
     transition: linear 0.1s;
     cursor: pointer;
+  }
+
+  & > p:hover {
+    color: ${color.deep_blue_2};
   }
 `;
 

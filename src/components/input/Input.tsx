@@ -5,12 +5,11 @@ import {
   InputTextLabel,
 } from "../layouts/input/input";
 
-// interface Props {
-//   defaultValue: string;
-//   setValue: string;
-// }
+interface Props {
+  getValue: Function;
+}
 
-const Input = ({}) => {
+const Input = ({ getValue }: Props) => {
   const [disabled, setDisabled] = useState(false);
   const [value, setValue] = useState("");
   const inputContainerRef = useRef<HTMLDivElement>(null);
@@ -38,6 +37,10 @@ const Input = ({}) => {
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
+  }, [value]);
+
+  useEffect(() => {
+    getValue(value);
   }, [value]);
 
   return (

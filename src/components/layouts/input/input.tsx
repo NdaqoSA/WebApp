@@ -16,7 +16,7 @@ interface FormContainerProps {
 }
 
 interface InputButtonProps {
-  active?: true;
+  active: boolean;
 }
 
 interface InputProps {

@@ -39,11 +39,21 @@ type Language = {
 const CardLangPopup = ({ setOpenLang }: Props) => {
   const [enable, setEnable] = useState<boolean>(false);
   const [alter, setAlter] = useState<boolean>(false);
-  const [searchText, setSearchText] = useState<string | null>(null);
+  const [searchText, setSearchText] = useState<string>("");
+  const [wrongText, setWrongText] = useState<string>("");
   const [languages] = useState<Language>(data);
   const [selectedLang, setSelectedLang] = useState(languages);
   const [exitAction, setExitAction] = useState(false);
   const [backAction, setBackAction] = useState(false);
+  const [cancelAction, setCancelAction] = useState(false);
+
+  useEffect(() => {
+    if (searchText.length >= 13) {
+      setWrongText(searchText.substring(0, 10) + "...");
+      return;
+    }
+    setWrongText(searchText);
+  }, [searchText]);
 
   useEffect(() => {
     if (searchText) {
@@ -127,13 +137,15 @@ const CardLangPopup = ({ setOpenLang }: Props) => {
               value={searchText}
             />
           </CardSearch>
-          <CardSearchCancel active={enable}>
+          <CardSearchCancel active={enable} click={cancelAction}>
             <Text
               size={14}
               onClick={() => {
                 setSearchText("");
                 setEnable(false);
               }}
+              onMouseEnter={() => setCancelAction(true)}
+              onMouseLeave={() => setCancelAction(false)}
             >
               Annuler
             </Text>
@@ -148,8 +160,7 @@ const CardLangPopup = ({ setOpenLang }: Props) => {
         ) : (
           <EmptyLang>
             <Text size={15} weight={700} align="center">
-              Oups, aucune langue ne correspond à votre recherche
-              “Kikongodehsev”
+              Oups, aucune langue ne correspond à votre recherche “{wrongText}”
             </Text>
             <Text size={11} weight={500} align="center">
               Vérifiez la saisie ou essayez une nouvelle recherche

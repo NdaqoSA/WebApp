@@ -22,11 +22,14 @@ import FormLogin from "../form/formLogin/FormLogin";
 import AuthSlider from "../slider/AuthSlider";
 import Back from "../icons/Back";
 import Exit from "../icons/Exit";
+import { UserInfos } from "../../utils/types/user";
 
 const CardLogin = () => {
-  const [alter, setAlter] = useState(false);
-  const [exitAction, setExitAction] = useState(false);
-  const [backAction, setBackAction] = useState(false);
+  const [alter, setAlter] = useState<boolean>(false);
+  const [exitAction, setExitAction] = useState<boolean>(false);
+  const [backAction, setBackAction] = useState<boolean>(false);
+  const [userInfos, setUserInfos] = useState<UserInfos>();
+  const [username, setUsername] = useState<string>("");
 
   const currentBorder = () => {
     if (backAction) {
@@ -39,6 +42,10 @@ const CardLogin = () => {
   };
 
   useEffect(() => {
+    setUsername(userInfos && userInfos.name);
+  }, [userInfos]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setAlter(!alter);
     }, 6000);
@@ -49,7 +56,7 @@ const CardLogin = () => {
     <CardShape border={currentBorder()}>
       <CardHeader style={{ marginBottom: 5 }}>
         <BackCardButton
-          to={"#"}
+          to={"/auth"}
           onMouseEnter={() => setBackAction(true)}
           onMouseLeave={() => setBackAction(false)}
         >
@@ -81,10 +88,10 @@ const CardLogin = () => {
           </Text>
         </CardProfileText>
         <CardToolTip>
-          <ToolTips username="Roberson Mafoua" />
+          <ToolTips username={username} />
         </CardToolTip>
         <CardSlideImage>
-          <AuthSlider />
+          <AuthSlider getUserIndex={setUserInfos} />
         </CardSlideImage>
       </CardProfile>
       <FormLogin />

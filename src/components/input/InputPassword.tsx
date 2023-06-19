@@ -6,17 +6,20 @@ import {
   InputTextPassword,
 } from "../layouts/input/input";
 
-// interface Props {
-//   defaultValue: string;
-//   setValue: string;
-// }
+interface Props {
+  getValue: Function;
+}
 
-const InputPassword = ({}) => {
+const InputPassword = ({ getValue }: Props) => {
   const [disabled, setDisabled] = useState(false);
   const [value, setValue] = useState("");
   const [hidden, setHidden] = useState(false);
   const inputContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    getValue(value);
+  }, [value]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -49,7 +52,7 @@ const InputPassword = ({}) => {
     >
       <InputIcon active={disabled} onClick={() => setHidden(!hidden)} />
       <InputTextLabel active={disabled}>
-        Adresse e-mail / Identifiant
+        Mot de passe
         <span> *</span>
       </InputTextLabel>
       <InputTextPassword
