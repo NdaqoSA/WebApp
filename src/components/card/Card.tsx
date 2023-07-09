@@ -73,15 +73,17 @@ const Card = () => {
     <CardShape border={currentBorder(true, "back")}>
       <>
         <CardHeader>
-          <BackCardButton
-            to={"#"}
-            onClick={() => setOpenLang(false)}
-            onMouseEnter={() => setBackAction(true)}
-            onMouseLeave={() => setBackAction(false)}
-            disable
-          >
-            <Back w={16} h={12} />
-          </BackCardButton>
+          {!openLang && (
+            <BackCardButton
+              to={"#"}
+              onClick={() => setOpenLang(false)}
+              onMouseEnter={() => setBackAction(true)}
+              onMouseLeave={() => setBackAction(false)}
+              disable
+            >
+              <Back w={16} h={12} />
+            </BackCardButton>
+          )}
           <CardTitle>
             {exitAction ? (
               <ButtonTooltip>Page d'acceuil</ButtonTooltip>
@@ -93,13 +95,15 @@ const Card = () => {
               <Logo w={72} h={24} />
             )}
           </CardTitle>
-          <ExitCardButton
-            to={"/"}
-            onMouseEnter={() => setExitAction(true)}
-            onMouseLeave={() => setExitAction(false)}
-          >
-            <Exit w={12} h={12} />
-          </ExitCardButton>
+          {!openLang && (
+            <ExitCardButton
+              to={"/"}
+              onMouseEnter={() => setExitAction(true)}
+              onMouseLeave={() => setExitAction(false)}
+            >
+              <Exit w={12} h={12} />
+            </ExitCardButton>
+          )}
         </CardHeader>
         <CardTextHeader>
           <Text align="center">

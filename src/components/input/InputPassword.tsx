@@ -6,6 +6,9 @@ import {
   InputTextPassword,
 } from "../layouts/input/input";
 
+import Show from "../icons/Show";
+import Hide from "../icons/Hide";
+
 interface Props {
   getValue: Function;
 }
@@ -50,7 +53,9 @@ const InputPassword = ({ getValue }: Props) => {
       onClick={() => setDisabled(true)}
       active={disabled}
     >
-      <InputIcon active={disabled} onClick={() => setHidden(!hidden)} />
+      <InputIcon active={disabled} onClick={() => setHidden(!hidden)}>
+        {!hidden ? <Hide w={18} h={12} /> : <Show w={18} h={12} />}
+      </InputIcon>
       <InputTextLabel active={disabled}>
         Mot de passe
         <span> *</span>

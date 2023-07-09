@@ -80,13 +80,25 @@ export const InputIcon = styled.div<InputProps>`
   height: 32px;
   border-radius: 5px;
   transform: translateY(-50%);
-  background: dodgerblue;
   pointer-events: ${({ active }) => (active ? "visible" : "none")};
   opacity: ${({ active }) => (active ? 1 : 0)};
-  transition: linear 0.3s;
+  transition: linear 0.2s;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
+  & path {
+    transition: linear 0.2s;
+  }
+
+  &:hover path {
+    fill: ${color.deep_blue_2};
+  }
+
+  &:hover {
+    background-color: ${color.fade_blue};
+  }
 `;
 
 export const InputText = styled.input<InputProps>`

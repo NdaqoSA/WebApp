@@ -1,4 +1,5 @@
 export const color = {
+  "ndaqo-black": "#0E0E1A",
   bg: "#ffffff",
   white: "#fff",
   black: "#000",

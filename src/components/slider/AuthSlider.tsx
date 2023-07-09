@@ -8,7 +8,7 @@ import Img5 from "../../assets/images/im5.jpg";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 // import required modules
-import { EffectCoverflow, Scrollbar } from "swiper";
+import { Autoplay, EffectCoverflow, Scrollbar } from "swiper/modules";
 import {
   SliderContainer,
   Swipe,
@@ -34,6 +34,7 @@ const AuthSlider = ({ getUserIndex }: AuthCurrentProps) => {
         grabCursor={true}
         centeredSlides={true}
         loop={true}
+        slideToClickedSlide={true}
         slidesPerView={2}
         coverflowEffect={{
           rotate: 0,
@@ -45,7 +46,11 @@ const AuthSlider = ({ getUserIndex }: AuthCurrentProps) => {
         onSlideChange={(swiper: { realIndex: SetStateAction<number> }) => {
           setCurrentState(swiper.realIndex);
         }}
-        modules={[EffectCoverflow, Scrollbar]}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay, EffectCoverflow, Scrollbar]}
         className="mySwiper"
       >
         {datas.map(({ img }, id) => (

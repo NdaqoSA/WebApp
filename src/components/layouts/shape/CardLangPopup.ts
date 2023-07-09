@@ -130,6 +130,39 @@ export const CardSearch = styled.div<CardSearchProps>`
     }
   }
 `;
+
+export const CardSearchMobile = styled(CardSearch)`
+  width: ${({ active }) => (active ? "239px" : "100%")};
+  height: 50px;
+
+  & small {
+    font-size: ${toRem(16)};
+  }
+
+  & > input {
+    padding-inline: 40px;
+    padding-right: 35px;
+    font-size: ${toRem(18)};
+
+    &:hover {
+      background: inherit;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: ${color.grey_trans};
+    }
+  }
+`;
+
+export const CardSearchMobileContainer = styled.div`
+  width: 100%;
+  height: 50px;
+  padding-inline: 41px;
+  display: flex;
+  margin-bottom: 12px;
+`;
+
 export const CardSearchCancel = styled.div<CardCancelProps>`
   width: ${({ active }) => (active ? "64px" : "11px")};
   height: 39px;
@@ -150,6 +183,11 @@ export const CardSearchCancel = styled.div<CardCancelProps>`
   }
 `;
 
+export const CardSearchCancelMobile = styled(CardSearchCancel)`
+  width: ${({ active }) => (active ? "85px" : 0)};
+  height: 50px;
+`;
+
 export const CardCircleDeleteButton = styled.span`
   transition: linear 0.2s;
 
@@ -158,12 +196,30 @@ export const CardCircleDeleteButton = styled.span`
   }
 `;
 
-export const CardListLang = styled.div`
+export const CardLangContainer = styled.div`
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
   display: flex;
-  flex-direction: column;
+`;
+
+export const CardListLang = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 45px;
   height: auto;
   margin-top: 10px;
   padding-inline: 58px;
+`;
+
+export const CardListLangMobile = styled(CardListLang)`
+  width: 264px;
+  height: 100%;
+  padding-inline: 0;
+  margin-inline: auto;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-type: x mandatory;
 `;
 
 export const EmptyLang = styled.div`
@@ -184,11 +240,18 @@ export const EmptyLang = styled.div`
   }
 `;
 
+export const EmptyLangMobile = styled(EmptyLang)`
+  width: 300px;
+  height: 105px;
+  margin-inline: auto;
+  padding-inline: 0;
+`;
+
 export const Lang = styled.p`
   width: 100%;
-  font-size: ${toRem(14)};
+  font-size: ${toRem(18)};
   font-weight: 600;
-  height: 35px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -202,3 +265,11 @@ export const Lang = styled.p`
     font-size: ${toRem(18)};
   }
 `;
+
+export const LangSpaceSeparator = styled.div`
+  width: 100%;
+  height: 10px;
+  background: transparent;
+`;
+
+export const LangMobile = styled(Lang)``;

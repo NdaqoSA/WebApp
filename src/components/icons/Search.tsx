@@ -4,6 +4,7 @@ interface Props {
   svg?: SVGProps<SVGSVGElement>;
   w: number;
   h: number;
+  weight?: number;
 }
 
 const Search = (props: Props) => (
@@ -11,6 +12,7 @@ const Search = (props: Props) => (
     xmlns="http://www.w3.org/2000/svg"
     width={props.w}
     height={props.h}
+    fontWeight={props.weight ? props.weight : 500}
     fill="none"
     {...props}
   >

@@ -40,7 +40,7 @@ export const CardToolTip = styled.div`
 `;
 
 export const CardProfileText = styled.div`
-  width: 100%;
+  width: auto;
   margin-bottom: 5px;
 `;
 

@@ -200,6 +200,14 @@ const data = [
     id: 5,
     language: "中国",
   },
+  {
+    id: 6,
+    language: "Italiano",
+  },
+  {
+    id: 7,
+    language: "Portugesh",
+  },
 ];
 
 export default CardLangPopup;

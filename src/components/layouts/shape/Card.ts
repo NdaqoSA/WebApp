@@ -6,10 +6,28 @@ import { toRem } from "../../../utils/styles/convert";
 import { Text } from "../../typo/Typo";
 interface CardButtonProps {
   disable?: true;
+  width?: number;
+  height?: number;
+  fill?: true;
+  size?: number;
+}
+
+interface DimensionsProps {
+  mw?: number;
+  pi?: number;
+}
+
+interface ButtonProps {
+  size?: number;
+  weight?: number;
 }
 
 interface CardProps {
   border: "default" | "hide" | "back" | "exit";
+}
+
+interface CardHeaderProps {
+  mb?: number;
 }
 
 export const Card = styled.div<CardProps>`
@@ -37,13 +55,13 @@ export const Card = styled.div<CardProps>`
 
 // CARD HEADER
 
-export const CardHeader = styled.div`
+export const CardHeader = styled.div<CardHeaderProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-inline: 5px;
   padding-top: 5px;
-  margin-bottom: 15px;
+  margin-bottom: ${({ mb }) => (mb ? toRem(mb) : "15px")};
 `;
 
 export const CardTitle = styled.div`
@@ -67,8 +85,8 @@ export const CardTextHeader = styled.div`
   padding-inline: 27px;
   margin-bottom: 20px;
 `;
-export const CardTextBottom = styled.div`
-  padding-inline: 35px;
+export const CardTextBottom = styled.div<DimensionsProps>`
+  padding-inline: ${({ pi }) => (pi ? toRem(pi) : "35px")};
   margin-bottom: 15px;
 `;
 
@@ -80,8 +98,8 @@ export const CardButton = styled.div`
 `;
 
 const DefaultCardButton = styled(Link)<CardButtonProps>`
-  width: 57px;
-  height: 46px;
+  width: ${({ width }) => (width ? `${width}px` : "57px")};
+  height: ${({ height }) => (height ? `${height}px` : "46px")};
   transition: ease 0.2s;
   display: flex;
   align-items: center;
@@ -94,11 +112,13 @@ const DefaultCardButton = styled(Link)<CardButtonProps>`
 export const BackCardButton = styled(DefaultCardButton)<CardButtonProps>`
   border-radius: 16px 0;
   transition: linear 0.2s;
-  background: ${({ disable }) => (disable ? color.inactive : color.blue_trans)};
+  background: ${({ disable, fill }) =>
+    disable ? color.inactive : fill ? color.blue : color.blue_trans};
 
   & path {
     transition: linear 0.2s;
-    fill: ${({ disable }) => (disable ? color.inactive_text : color.blue)};
+    fill: ${({ disable, fill }) =>
+      disable ? color.inactive_text : fill ? color.white : color.blue};
   }
 
   &:hover {
@@ -112,9 +132,11 @@ export const BackCardButton = styled(DefaultCardButton)<CardButtonProps>`
 export const ExitCardButton = styled(DefaultCardButton)<CardButtonProps>`
   border-radius: 0px 16px;
   transition: linear 0.2s;
-  background: ${({ disable }) => (disable ? color.inactive : color.red_trans)};
+  background: ${({ disable, fill }) =>
+    disable ? color.inactive : fill ? color.red : color.red_trans};
   & path {
-    fill: ${({ disable }) => (disable ? color.inactive_text : color.red)};
+    fill: ${({ disable, fill }) =>
+      disable ? color.inactive_text : fill ? color.white : color.red};
     transition: linear 0.2s;
   }
   &:hover {
@@ -126,7 +148,7 @@ export const ExitCardButton = styled(DefaultCardButton)<CardButtonProps>`
   }
 `;
 
-export const DefaultButton = styled(Link)`
+export const DefaultButton = styled(Link)<ButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,7 +163,8 @@ export const CardRegisterButton = styled(DefaultButton)`
   background-color: ${color.grey_trans};
   margin-bottom: 14px;
   color: ${color.text_color};
-  font-size: ${toRem(14)};
+  font-size: ${({ size }) => (size ? toRem(size) : toRem(14))};
+  width: ${({ weight }) => (weight ? weight : 500)};
 
   &:hover {
     color: ${color.text_color};
@@ -152,6 +175,8 @@ export const CardSigntButton = styled(DefaultButton)`
   background-color: ${color.blue};
   color: ${color.text_white};
   font-size: ${toRem(14)};
+  font-size: ${({ size }) => (size ? toRem(size) : toRem(14))};
+  width: ${({ weight }) => (weight ? weight : 500)};
 
   &:hover {
     color: ${color.text_white};
@@ -163,16 +188,17 @@ export const CardSigntButton = styled(DefaultButton)`
   }
 `;
 
-export const CardButtonLang = styled(Link)`
-  width: 147px;
-  height: 27px;
+export const CardButtonLang = styled(Link)<CardButtonProps>`
+  width: ${({ width }) => (width ? toRem(width) : "147px")};
+  height: ${({ height }) => (height ? toRem(height) : "27px")};
   border-radius: 5px;
-  color: ${color.text_color_trans_2};
-  background-color: ${color.grey_trans};
+  color: ${({ fill }) => (fill ? color.blue : color.text_color_trans_2)};
+  background-color: ${({ fill }) =>
+    fill ? color.blue_trans_2 : color.grey_trans};
   display: flex;
   gap: 3px;
   transition: ease 0.4s;
-  font-size: ${toRem(11)};
+  font-size: ${({ size }) => (size ? toRem(size) : toRem(11))};
   font-weight: 600;
   margin-inline: auto;
   display: flex;
@@ -180,8 +206,14 @@ export const CardButtonLang = styled(Link)`
   justify-content: center;
   margin-bottom: 20px;
 
+  & > *:first-child {
+    position: relative;
+    top: ${({ fill }) => (fill ? toRem(2) : "")};
+    left: ${({ fill }) => (fill ? toRem(8) : "")};
+  }
+
   & path {
-    fill: ${color.text_color_trans_2};
+    fill: ${({ fill }) => (fill ? color.blue : color.text_color_trans_2)};
   }
 
   &:hover {
