@@ -75,8 +75,6 @@ const CardLangMobile = ({ setOpenLang }: Props) => {
     }
   }, [searchText]);
 
-  console.log(setCancelAction);
-
   return (
     <MobileContainerLang>
       <Card>
