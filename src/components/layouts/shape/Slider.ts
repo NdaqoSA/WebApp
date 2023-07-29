@@ -1,5 +1,13 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { toRem } from "../../../utils/styles/convert";
+
+interface SwiperProps {
+  width?: number;
+  height?: number;
+  br?: number;
+}
+
 export const SliderContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -11,21 +19,25 @@ export const SliderContainer = styled.div`
 export const Swipe = styled(Swiper)`
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const SwiperSlider = styled(SwiperSlide)`
+export const SwiperSlider = styled(SwiperSlide)<SwiperProps>`
   display: flex;
+  justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
-  border-radius: 200px;
+  width: ${({ width }) => (width ? toRem(width) : toRem(200))};
+  height: ${({ height }) => (height ? toRem(height) : toRem(200))};
+  border-radius: ${({ br }) => (br ? toRem(br) : toRem(200))};
   overflow: hidden;
 `;
 
-export const SwiperImage = styled.img`
-  width: 200px;
-  height: 200px;
-  border-radius: 200px;
+export const SwiperImage = styled.img<SwiperProps>`
+  width: ${({ width }) => (width ? toRem(width) : toRem(200))};
+  height: ${({ height }) => (height ? toRem(height) : toRem(200))};
+  border-radius: ${({ br }) => (br ? toRem(br) : toRem(200))};
   background: yellow;
   display: flex;
   justify-content: center;

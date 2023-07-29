@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import Input from "../../input/Input";
-import InputPassword from "../../input/InputPassword";
+import Input from "../../../input/Input";
+import InputPassword from "../../../input/InputPassword";
 import {
-  Form,
+  FormMobile,
   FormInputContainer,
   FormTextContainer,
   InputLoginButton,
-} from "../../layouts/input/input";
-import { Text } from "../../typo/Typo";
+} from "../../../layouts/input/input";
+import { Text } from "../../../typo/Typo";
 
-const FormLogin = () => {
+const FormLoginMobile = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isValid, setIsValid] = useState(false);
@@ -26,7 +26,7 @@ const FormLogin = () => {
     validateInput();
   }, [password, email]);
   return (
-    <Form pi={60}>
+    <FormMobile pi={60}>
       <FormTextContainer>
         <Text size={14} align="center">
           Utilise ton adresse e-mail pour te connecter.
@@ -37,8 +37,8 @@ const FormLogin = () => {
         <InputPassword getValue={setPassword} />
         <InputLoginButton active={isValid}>Se connecter</InputLoginButton>
       </FormInputContainer>
-    </Form>
+    </FormMobile>
   );
 };
 
-export default FormLogin;
+export default FormLoginMobile;

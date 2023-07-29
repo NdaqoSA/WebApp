@@ -1,9 +1,15 @@
 import styled from "styled-components";
 import { color } from "../../../utils/styles/color";
 import { dimensions } from "../../../utils/styles/dimensions";
+import { toRem } from "../../../utils/styles/convert";
 
 interface CardProps {
   border: "default" | "back" | "exit";
+}
+
+interface CardSlideProps {
+  width?: number;
+  height?: number;
 }
 export const Card = styled.div<CardProps>`
   position: relative;
@@ -44,11 +50,15 @@ export const CardProfileText = styled.div`
   margin-bottom: 5px;
 `;
 
-export const CardSlideImage = styled.div`
+export const CardSlideImage = styled.div<CardSlideProps>`
   width: 100%;
-  height: 200px;
   margin-top: 11px;
   padding-inline: 30px;
+`;
+
+export const CardSlideImageMobile = styled(CardSlideImage)`
+  padding-inline: 0;
+  margin-bottom: 15px;
 `;
 
 export const CardFooter = styled.div`
@@ -64,4 +74,8 @@ export const CardFooter = styled.div`
       font-weight: 600;
     }
   }
+`;
+
+export const CardFooterMobile = styled(CardFooter)`
+  padding-inline: 22px;
 `;

@@ -4,6 +4,7 @@ export const color = {
   white: "#fff",
   black: "#000",
   white_trans: "rgba(255, 255, 255, 0.7)",
+  white_trans2: "rgba(255, 255, 255, 0.8)",
   border: "rgba(14, 14, 26, 0.4)",
   grey: "rgba(14, 14, 26, 0.1)",
   deep_grey: "rgba(14, 14, 26, 0.7)",

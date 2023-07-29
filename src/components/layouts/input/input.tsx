@@ -29,7 +29,10 @@ export const Form = styled.form<FormProps>`
   max-width: ${(props) => (props.mw ? toRem(props.mw) : "100%")};
   padding-inline: ${(props) => (props.pi ? toRem(props.pi) : 0)};
 `;
-
+export const FormMobile = styled.form<FormProps>`
+  width: 100%;
+  padding-inline: 22px;
+`;
 export const InputLoginButton = styled.button<InputButtonProps>`
   position: relative;
   width: 100%;
