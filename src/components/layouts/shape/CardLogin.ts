@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { color } from "../../../utils/styles/color";
 import { dimensions } from "../../../utils/styles/dimensions";
-import { toRem } from "../../../utils/styles/convert";
 
 interface CardProps {
   border: "default" | "back" | "exit";

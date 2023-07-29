@@ -122,6 +122,7 @@ const CardLangMobile = ({ setOpenLang }: Props) => {
               onClick={() => {
                 setSearchText("");
                 setEnable(false);
+                setCancelAction(false)
               }}
             >
               Annuler
