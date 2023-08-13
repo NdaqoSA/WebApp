@@ -24,6 +24,8 @@ const MobileCategoryTab = ({ activeCategory }: Props) => {
   const thirdRef = useRef<HTMLParagraphElement>(null);
   const fourthRef = useRef<HTMLParagraphElement>(null);
 
+  console.log(activeCategory);
+
   useEffect(() => {
     if (cursor === 1) {
       setSelectedTab(firstRef.current.getBoundingClientRect().width + "px");

@@ -20,6 +20,7 @@ import MobileCategoryTab from "../../components/tab/MobileCategoryTab";
 const MobileHome = () => {
   const [activeTab, setActiveTab] = useState(2);
   const [activeCategory, setActiveCategory] = useState(1);
+  console.log(activeCategory);
   return (
     <MobileHomeContainer>
       <MobileHomeHeader>
