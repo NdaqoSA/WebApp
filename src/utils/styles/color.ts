@@ -1,8 +1,10 @@
 export const color = {
   "ndaqo-black": "#0E0E1A",
+  "ndaqo-white": "#F7F8FC",
   bg: "#ffffff",
   white: "#fff",
   black: "#000",
+  black_trans: "rgba(0, 0, 0, 0.70);",
   white_trans: "rgba(255, 255, 255, 0.7)",
   white_trans2: "rgba(255, 255, 255, 0.8)",
   border: "rgba(14, 14, 26, 0.4)",

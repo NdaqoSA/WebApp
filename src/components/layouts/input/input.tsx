@@ -141,3 +141,15 @@ export const FormInputContainer = styled.div<FormContainerProps>`
   flex-direction: column;
   gap: 10px;
 `;
+
+export const PriceMobileButton = styled.button`
+  width: 70px;
+  height: 26px;
+  line-height: 12px;
+  border-radius: 7px;
+  border: 1px solid ${color["ndaqo-white"]};
+  background: transparent;
+  color: ${color.white};
+  font-size: 12px;
+  font-weight: 600;
+`;
