@@ -8,10 +8,11 @@ interface TabProps {
 }
 
 export const Container = styled.div`
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  height: 78px;
-  padding-top: 20px;
-  padding-inline: 31px;
+  height: 65px;
+  padding-inline: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +20,7 @@ export const Container = styled.div`
   background: ${color.white_trans2};
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
+  z-index: 5;
 `;
 
 export const TabContainer = styled.div`
@@ -29,16 +31,16 @@ export const TabContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
 `;
 
 export const TabContent = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   justify-content: center;
   align-items: center;
+  gap: 9px;
 `;
 
 export const Tab = styled.div`

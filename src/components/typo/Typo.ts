@@ -17,12 +17,15 @@ export const TextLogo = styled.h1`
 `;
 
 export const Text = styled.p<TextProps>`
+  display: flex;
+  align-items: center;
   color: ${({ fill }) =>
     fill ? color["ndaqo-black"] : color.text_color_trans};
   font-size: ${(props) => (props.size ? toRem(props.size) : toRem(12))};
   font-weight: ${(props) => (props.weight ? props.weight : 600)};
   text-align: ${({ align }) => (align ? align : "left")};
   line-height: ${toRem(15)};
+  gap: 3px;
 `;
 
 export const SubText = styled.p<TextProps>`

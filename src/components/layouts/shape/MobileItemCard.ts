@@ -6,6 +6,7 @@ export const ItemCardContainer = styled.div`
   height: auto;
   display: grid;
   grid-template-columns: 1fr;
+  border-bottom: 5px solid ${color.inactive_text};
 `;
 
 export const ItemCardContent = styled.div`
@@ -78,12 +79,14 @@ export const ItemCardUser = styled.div`
   width: 70px;
   height: 70px;
   border-radius: 70px;
+  margin-bottom: 10px;
 `;
 
 export const ItemCardInfosData = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 5px;
 `;
 
 export const ItemCardInfosIconData = styled.div`
@@ -92,6 +95,100 @@ export const ItemCardInfosIconData = styled.div`
   border-radius: 7px;
   display: flex;
   justify-content: space-between;
-  padding-inline: 10px;
+  padding-inline: 10px 15px;
   background-color: ${color.grey_trans};
+`;
+export const HouseDetailContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const HouseDetail = styled.div`
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+`;
+
+export const MoreDetailButton = styled.button`
+  background: transparent;
+  border: none;
+  width: 13px;
+`;
+
+export const ItemCardInfosTextData = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+`;
+
+export const ItemCardInfosTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+`;
+
+export const ItemsCardInfosTextTop = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 3px;
+`;
+export const ItemsCardInfosTextBottom = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`;
+
+export const ItemsCardMessageButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: ${color.inactive_text};
+  border: none;
+`;
+
+export const ItemCardButtonGroupContainer = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 3fr;
+  gap: 10px;
+  width: 100%;
+  height: 74px;
+`;
+
+export const ItemCardButtonGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+`;
+
+const ItemCardButton = styled.button`
+  width: 100%;
+  height: 43px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  border: none;
+`;
+
+export const ItemLikeButton = styled(ItemCardButton)`
+  background-color: ${color.inactive_text};
+`;
+export const ItemCollectionButton = styled(ItemCardButton)`
+  background-color: ${color["ndaqo-black"]};
+`;
+export const ItemVisitedButton = styled(ItemCardButton)`
+  background-color: ${color.deep_blue_2};
+
+  & p {
+    color: ${color.light_grey};
+  }
 `;

@@ -52,11 +52,30 @@ export const MobileCardBottom = styled.div`
 `;
 
 export const MobileHomeContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: ${color.black};
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
+`;
+
+export const MobileHomeHeaderContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  background: ${color.black};
+  z-index: 3;
+`;
+
+export const MobileHomeHeaderTabContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  background: ${color.white};
+  border-radius: 25px 25px 0 0;
 `;
 
 export const MobileHomeHeader = styled.div`
@@ -77,25 +96,29 @@ export const FlagRounded = styled.img`
 `;
 
 export const MobileMainHome = styled.div`
-  height: 100%;
+  height: auto;
   width: 100%;
   background-color: ${color.white};
-  border-radius: 25px 25px 0 0;
   display: flex;
   flex-direction: column;
   position: relative;
   gap: 0;
+  margin-top: 184px;
+  margin-bottom: 60px;
 `;
 
 export const MobileTabPage = styled(motion.div)`
   width: 100%;
-  height: 100%;
+  min-height: auto;
+  background: ${color.white};
 `;
 
 export const TabBox = styled.div`
   width: 100%;
+  min-height: 100vh;
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
+  background-color: ${color.white};
 `;

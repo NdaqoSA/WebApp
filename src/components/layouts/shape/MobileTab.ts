@@ -3,6 +3,8 @@ import { color } from "../../../utils/styles/color";
 
 interface TabProps {
   position: number;
+  width?: string;
+  selectedWidth?: string;
 }
 
 export const Container = styled.div`
@@ -25,7 +27,6 @@ export const TabContainer = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding-inline: 3px;
   margin-bottom: 15px;
 `;
 
@@ -53,11 +54,9 @@ export const Tab = styled.div`
 
 export const SelectedTab = styled.div<TabProps>`
   position: absolute;
-  left: ${({ position }) =>
-    position === 1 ? "3px" : position === 2 ? "109px" : "215px"};
-  width: 100%;
-  max-width: 106px;
-  height: 25px;
+  left: ${({ width }) => width && width};
+  width: ${({ selectedWidth }) => (selectedWidth ? selectedWidth : 0)};
+  height: 31px;
   border-radius: 5px;
   background-color: ${color.blue_violet};
   z-index: 2;
