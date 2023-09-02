@@ -11,7 +11,7 @@ import { PriceMobileButton } from "../../components/layouts/input/input";
 import Logo from "../../components/icons/Logo";
 import MobileTab from "../../components/tab/MobileTab";
 import MobileBottomMenu from "../../components/tab/MobileBottomMenu";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import BuyTab from "../../components/tab/section/BuyTab";
 import RentTab from "../../components/tab/section/RentTab";
 import ServiceTab from "../../components/tab/section/ServiceTab";
@@ -23,17 +23,17 @@ const MobileHome = () => {
   const [activeCategory, setActiveCategory] = useState(1);
   console.log(activeCategory);
 
-  const handleScroll = (e: Event) => {
-    const target = e.target as HTMLElement;
+  // const handleScroll = (e: Event) => {
+  //   // const target = e.target as HTMLElement;
 
-    console.log(window.Screen);
-  };
+  //   console.log(window.Screen);
+  // };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // });
 
   return (
     <MobileHomeContainer>

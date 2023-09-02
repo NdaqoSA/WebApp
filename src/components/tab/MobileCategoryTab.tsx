@@ -26,7 +26,7 @@ const MobileCategoryTab = ({ activeCategory }: Props) => {
   const fourthRef = useRef<HTMLParagraphElement>(null);
   const tabRef = useRef<HTMLDivElement>(null);
 
-  console.log(activeCategory);
+  console.log(activeCategory, tabPos);
 
   useEffect(() => {
     if (cursor === 1) {
