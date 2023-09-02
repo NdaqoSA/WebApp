@@ -7,6 +7,7 @@ export const color = {
   black_trans: "rgba(0, 0, 0, 0.70);",
   white_trans: "rgba(255, 255, 255, 0.7)",
   white_trans2: "rgba(255, 255, 255, 0.8)",
+  dark_grey: "rgba(247, 248, 252, 0.15)",
   border: "rgba(14, 14, 26, 0.4)",
   grey: "rgba(14, 14, 26, 0.1)",
   deep_grey: "rgba(14, 14, 26, 0.7)",

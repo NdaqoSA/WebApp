@@ -97,6 +97,7 @@ export const ItemCardInfosIconData = styled.div`
   justify-content: space-between;
   padding-inline: 10px 15px;
   background-color: ${color.grey_trans};
+  gap: 10px;
 `;
 export const HouseDetailContainer = styled.div`
   width: 100%;

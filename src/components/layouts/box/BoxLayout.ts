@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { color } from "../../../utils/styles/color";
 import { motion } from "framer-motion";
-
+import { SwiperSlide, Swiper } from "swiper/react";
 interface FlexRowProps {
   x: "start" | "center" | "end" | "between";
   y: "start" | "center" | "end";
@@ -16,6 +16,11 @@ export const Container = styled.div`
   align-items: center;
   background-color: ${color.bg};
 `;
+
+export const SwiperContainer = styled(Swiper)`
+  width: 100%;
+`;
+export const SwiperSlideContainer = styled(SwiperSlide)``;
 
 export const FlexRow = styled.div<FlexRowProps>`
   display: flex;
@@ -55,7 +60,7 @@ export const MobileHomeContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: ${color.black};
+  background-color: ${color.white};
   width: 100vw;
   min-height: 100vh;
   height: 100%;
@@ -79,7 +84,7 @@ export const MobileHomeHeaderTabContainer = styled.div`
 `;
 
 export const MobileHomeHeader = styled.div`
-  margin-top: 40px;
+  margin-top: 15px;
   margin-inline: 22px;
   display: flex;
   justify-content: space-between;
@@ -103,7 +108,7 @@ export const MobileMainHome = styled.div`
   flex-direction: column;
   position: relative;
   gap: 0;
-  margin-top: 184px;
+  margin-top: 234px;
   margin-bottom: 60px;
 `;
 

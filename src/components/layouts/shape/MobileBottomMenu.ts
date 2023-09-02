@@ -13,9 +13,10 @@ export const Container = styled.div`
   width: 100%;
   height: 65px;
   padding-inline: 20px;
+  padding-top: 4px;
+  padding-bottom: 6px;
   display: flex;
   justify-content: center;
-  align-items: center;
   border-top: 1px solid ${color.grey};
   background: ${color.white_trans2};
   backdrop-filter: blur(15px);
@@ -49,7 +50,8 @@ export const Tab = styled.div`
   border-radius: 15px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 20px;
 
   & svg {
     transition: ease 0.4s;

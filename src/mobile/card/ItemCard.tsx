@@ -66,7 +66,7 @@ const ItemCard = () => {
             <ItemCardInfosIconData>
               <HouseDetailContainer>
                 <HouseDetail>
-                  <BedRoom w={24} h={15} />
+                  <BedRoom w={24} h={16} />
                   <Text size={12} weight={700}>
                     3
                   </Text>
@@ -84,19 +84,19 @@ const ItemCard = () => {
                   </Text>
                 </HouseDetail>
                 <HouseDetail>
-                  <CookRoom w={25} h={15} />
+                  <CookRoom w={27} h={18} />
                   <Text size={12} weight={700}>
                     2
                   </Text>
                 </HouseDetail>
                 <HouseDetail>
-                  <SwimmingPool w={14} h={15} />
+                  <SwimmingPool w={14} h={17} />
                   <Text size={12} weight={700}>
                     1
                   </Text>
                 </HouseDetail>
                 <HouseDetail>
-                  <Surface w={14} h={15} />
+                  <Surface w={16} h={15} />
                   <Text size={12} weight={700}>
                     750
                   </Text>
@@ -137,7 +137,7 @@ const ItemCard = () => {
         <ItemCardButtonGroupContainer>
           <ItemCardButtonGroup>
             <ItemLikeButton>
-              <Like w={15} h={19} />{" "}
+              <Like w={25} h={20} />
               <Text size={14} weight={600} fill>
                 J'aime
               </Text>

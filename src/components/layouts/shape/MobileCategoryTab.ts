@@ -15,8 +15,8 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  border-bottom: 1px solid ${color.grey};
   z-index: 20;
+  border-bottom: 1px solid ${color.grey};
 `;
 
 export const TabContainer = styled.div`
@@ -30,10 +30,11 @@ export const TabContainer = styled.div`
 
 export const TabContent = styled.div`
   width: 100%;
-  height: 100%;
+  height: 23px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  /* padding-bottom: 4px; */
   gap: 15px;
 `;
 
@@ -41,7 +42,9 @@ export const Tab = styled.div`
   width: fit-content;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  height: 100%;
+  /* background: #00001233; */
 
   & p {
     transition: ease 0.4s;
@@ -60,5 +63,4 @@ export const SelectedTab = styled.div<TabProps>`
   background-color: ${color.blue_violet};
   z-index: 2;
   transition: ease 0.4s;
-  /* transform: translateX(-50%); */
 `;

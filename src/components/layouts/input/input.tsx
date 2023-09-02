@@ -147,8 +147,8 @@ export const PriceMobileButton = styled.button`
   height: 26px;
   line-height: 12px;
   border-radius: 7px;
-  border: 1px solid ${color["ndaqo-white"]};
-  background: transparent;
+  border: none;
+  background: ${color.dark_grey};
   color: ${color.white};
   font-size: 12px;
   font-weight: 600;

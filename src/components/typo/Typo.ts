@@ -7,6 +7,7 @@ interface TextProps {
   size?: number;
   weight?: number;
   fill?: true;
+  nogap?: true;
 }
 
 export const TextLogo = styled.h1`
@@ -25,7 +26,7 @@ export const Text = styled.p<TextProps>`
   font-weight: ${(props) => (props.weight ? props.weight : 600)};
   text-align: ${({ align }) => (align ? align : "left")};
   line-height: ${toRem(15)};
-  gap: 3px;
+  gap: ${({ nogap }) => (nogap ? 0 : "3px")};
 `;
 
 export const SubText = styled.p<TextProps>`

@@ -2,8 +2,15 @@ import { useState } from "react";
 import {
   Container,
   Filter,
+  SwiperContainer,
+  SwiperSlideContainer,
 } from "../../components/layouts/shape/MobileFilterTab";
 import { Text } from "../../components/typo/Typo";
+
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import { FreeMode } from "swiper/modules";
 
 const FilterTab = () => {
   const [filter, setFilter] = useState({
@@ -15,66 +22,136 @@ const FilterTab = () => {
 
   return (
     <Container>
-      <Filter
-        selected={filter.all}
-        onClick={() =>
-          setFilter({
-            all: true,
-            studio: false,
-            house: false,
-            appartment: false,
-          })
-        }
+      <SwiperContainer
+        slidesPerView={"auto"}
+        spaceBetween={10}
+        freeMode={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[FreeMode]}
+        className="mySwiper"
       >
-        <Text size={14} weight={500}>
-          Tout
-        </Text>
-      </Filter>
-      <Filter
-        selected={filter.studio}
-        onClick={() =>
-          setFilter({
-            all: false,
-            studio: true,
-            house: false,
-            appartment: false,
-          })
-        }
-      >
-        <Text size={14} weight={500}>
-          Studio
-        </Text>
-      </Filter>
-      <Filter
-        selected={filter.house}
-        onClick={() =>
-          setFilter({
-            all: false,
-            studio: false,
-            house: true,
-            appartment: false,
-          })
-        }
-      >
-        <Text size={14} weight={500}>
-          Maison
-        </Text>
-      </Filter>
-      <Filter
-        selected={filter.appartment}
-        onClick={() =>
-          setFilter({
-            all: false,
-            studio: false,
-            house: false,
-            appartment: true,
-          })
-        }
-      >
-        <Text size={14} weight={500}>
-          Appartement
-        </Text>
-      </Filter>
+        <SwiperSlideContainer>
+          <Filter
+            selected={filter.all}
+            onClick={() =>
+              setFilter({
+                all: true,
+                studio: false,
+                house: false,
+                appartment: false,
+              })
+            }
+          >
+            <Text size={14} weight={500}>
+              Tout
+            </Text>
+          </Filter>
+        </SwiperSlideContainer>
+        <SwiperSlideContainer>
+          <Filter
+            selected={filter.studio}
+            onClick={() =>
+              setFilter({
+                all: false,
+                studio: true,
+                house: false,
+                appartment: false,
+              })
+            }
+          >
+            <Text size={14} weight={500}>
+              Studio
+            </Text>
+          </Filter>
+        </SwiperSlideContainer>
+        <SwiperSlideContainer>
+          <Filter
+            selected={filter.house}
+            onClick={() =>
+              setFilter({
+                all: false,
+                studio: false,
+                house: true,
+                appartment: false,
+              })
+            }
+          >
+            <Text size={14} weight={500}>
+              Maison
+            </Text>
+          </Filter>
+        </SwiperSlideContainer>
+        <SwiperSlideContainer>
+          <Filter
+            selected={filter.appartment}
+            onClick={() =>
+              setFilter({
+                all: false,
+                studio: false,
+                house: false,
+                appartment: true,
+              })
+            }
+          >
+            <Text size={14} weight={500}>
+              Appartement
+            </Text>
+          </Filter>
+        </SwiperSlideContainer>
+        <SwiperSlideContainer>
+          <Filter
+            selected={filter.studio}
+            onClick={() =>
+              setFilter({
+                all: false,
+                studio: true,
+                house: false,
+                appartment: false,
+              })
+            }
+          >
+            <Text size={14} weight={500}>
+              Studio
+            </Text>
+          </Filter>
+        </SwiperSlideContainer>
+        <SwiperSlideContainer>
+          <Filter
+            selected={filter.appartment}
+            onClick={() =>
+              setFilter({
+                all: false,
+                studio: false,
+                house: false,
+                appartment: true,
+              })
+            }
+          >
+            <Text size={14} weight={500}>
+              Appartement
+            </Text>
+          </Filter>
+        </SwiperSlideContainer>
+        <SwiperSlideContainer>
+          <Filter
+            selected={filter.all}
+            onClick={() =>
+              setFilter({
+                all: false,
+                studio: false,
+                house: false,
+                appartment: false,
+              })
+            }
+          >
+            <Text size={14} weight={500}>
+              Tout
+            </Text>
+          </Filter>
+        </SwiperSlideContainer>
+      </SwiperContainer>
     </Container>
   );
 };

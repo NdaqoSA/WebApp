@@ -14,10 +14,10 @@ interface Props {
 
 const MobileTab = ({ activeTab }: Props) => {
   const [cursor, setCursor] = useState(2);
-  const [firstEl, setFirstEl] = useState("0");
-  const [secondEl, setSecondEl] = useState("");
-  const [thirdEl, setThirddEl] = useState("");
-  const [selectedTab, setSelectedTab] = useState("0");
+  const [firstEl, setFirstEl] = useState<string>("0");
+  const [secondEl, setSecondEl] = useState<string>("");
+  const [thirdEl, setThirddEl] = useState<string>("");
+  const [selectedTab, setSelectedTab] = useState<string>("0");
   const firstRef = useRef<HTMLDivElement>(null);
   const secondRef = useRef<HTMLDivElement>(null);
   const thirdRef = useRef<HTMLDivElement>(null);
