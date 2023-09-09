@@ -10,8 +10,9 @@ export const Container = styled.div`
   width: 100%;
   height: auto;
   padding-block: 15px;
-  padding-inline: 11px;
-  border-bottom: 1px solid ${color.inactive_text};
+  padding-inline: 5px;
+  background: ${color.white_trans_3};
+  backdrop-filter: blur(7.5px);
 `;
 
 export const SwiperContainer = styled(Swiper)``;

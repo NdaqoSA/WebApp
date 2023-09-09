@@ -26,7 +26,6 @@ import {
 } from "../../components/layouts/shape/MobileItemCard";
 import Image from "../../assets/images/im4.jpg";
 import User from "../../assets/images/im1.jpg";
-import LinkIcon from "../../components/icons/LinkIcon";
 import { Text } from "../../components/typo/Typo";
 // import Search from "../../components/icons/Search";
 import BedRoom from "../../components/icons/BedRoom";
@@ -41,6 +40,7 @@ import Message from "../../components/icons/Message";
 import Like from "../../components/icons/Like";
 import Collection from "../../components/icons/Collection";
 import Visited from "../../components/icons/Visited";
+import TripleDots from "../../components/icons/TripleDots";
 
 const ItemCard = () => {
   return (
@@ -48,7 +48,7 @@ const ItemCard = () => {
       <ItemCardContent>
         <ItemCardImage>
           <ItemCardIcon>
-            <LinkIcon w={17} h={17} />
+            <TripleDots w={13} h={3} />
           </ItemCardIcon>
           <Img src={Image} alt="image" radius="17px" />
         </ItemCardImage>

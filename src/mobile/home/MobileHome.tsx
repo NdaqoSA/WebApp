@@ -3,6 +3,7 @@ import {
   MobileHomeContainer,
   MobileHomeHeader,
   MobileHomeHeaderContainer,
+  MobileHomeHeaderGroup,
   MobileHomeHeaderTabContainer,
   MobileMainHome,
 } from "../../components/layouts/box/BoxLayout";
@@ -38,17 +39,19 @@ const MobileHome = () => {
   return (
     <MobileHomeContainer>
       <MobileHomeHeaderContainer>
-        <MobileHomeHeader>
-          <PriceMobileButton>XAF</PriceMobileButton>
-          <Logo w={74} h={25} white />
-          <FlagRounded src={Flag} alt="Flag of countries" />
-        </MobileHomeHeader>
-        <MobileHomeHeaderTabContainer>
-          <MobileTab activeTab={setActiveTab} />
-          <MobileCategoryTab activeCategory={setActiveCategory} />
-          <FilterTab />
-          <MobileBottomMenu />
-        </MobileHomeHeaderTabContainer>
+        <MobileHomeHeaderGroup>
+          <MobileHomeHeader>
+            <PriceMobileButton>XAF</PriceMobileButton>
+            <Logo w={74} h={25} white />
+            <FlagRounded src={Flag} alt="Flag of countries" />
+          </MobileHomeHeader>
+          <MobileHomeHeaderTabContainer>
+            <MobileTab activeTab={setActiveTab} />
+            <MobileCategoryTab activeCategory={setActiveCategory} />
+            <MobileBottomMenu />
+          </MobileHomeHeaderTabContainer>
+        </MobileHomeHeaderGroup>
+        <FilterTab />
       </MobileHomeHeaderContainer>
       <MobileMainHome>
         {activeTab === 1 ? (

@@ -27,12 +27,12 @@ export const ItemCardImage = styled.div`
 
 export const ItemCardIcon = styled.a`
   position: absolute;
-  top: 19px;
-  right: 15px;
-  width: 59px;
-  height: 43px;
-  border-radius: 10px;
-  background-color: ${color.black_trans};
+  top: 8px;
+  right: 8px;
+  width: 33px;
+  height: 27px;
+  border-radius: 0px 8px 0px 8px;
+  background-color: ${color.fade_grey2};
   display: flex;
   justify-content: center;
   align-items: center;

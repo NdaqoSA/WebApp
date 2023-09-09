@@ -1,6 +1,7 @@
 export const color = {
   "ndaqo-black": "#0E0E1A",
   "ndaqo-white": "#F7F8FC",
+
   bg: "#ffffff",
   white: "#fff",
   black: "#000",
@@ -12,12 +13,14 @@ export const color = {
   grey: "rgba(14, 14, 26, 0.1)",
   deep_grey: "rgba(14, 14, 26, 0.7)",
   grey_trans: "rgba(14, 14, 26, 0.05)",
+  white_trans_3: "rgba(255, 255, 255, 0.75)",
   blue: "#1F65C9",
   blue_trans: "rgba(31, 101, 201, 0.2)",
   blue_trans_2: "rgba(31, 101, 201, 0.1)",
   fade_blue: "rgba(0, 80, 200, 0.1)",
   deep_blue: "#002EBF",
   fade_grey: "rgba(14, 14, 26, 0.2)",
+  fade_grey2: "rgba(14, 14, 26, 0.25)",
   deep_blue_2: "#0050C8",
   inactive: "rgba(14, 14, 26, 0.05)",
   inactive_text: "rgba(14, 14, 26, 0.1)",

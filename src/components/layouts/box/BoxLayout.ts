@@ -70,10 +70,17 @@ export const MobileHomeHeaderContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 3;
   width: 100vw;
   height: auto;
+`;
+
+export const MobileHomeHeaderGroup = styled.div`
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
   background: ${color.black};
-  z-index: 3;
 `;
 
 export const MobileHomeHeaderTabContainer = styled.div`
@@ -84,12 +91,12 @@ export const MobileHomeHeaderTabContainer = styled.div`
 `;
 
 export const MobileHomeHeader = styled.div`
-  margin-top: 15px;
+  margin-top: 0;
   margin-inline: 22px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  height: 55px;
 `;
 
 export const FlagRounded = styled.img`
@@ -108,7 +115,7 @@ export const MobileMainHome = styled.div`
   flex-direction: column;
   position: relative;
   gap: 0;
-  margin-top: 234px;
+  margin-top: 210px;
   margin-bottom: 60px;
 `;
 
