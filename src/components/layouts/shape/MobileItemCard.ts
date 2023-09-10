@@ -21,8 +21,14 @@ export const ItemCardImage = styled.div`
   height: 258px;
   border-radius: 17px;
   overflow: hidden;
-  position: relative;
   margin-bottom: 10px;
+  background: red;
+`;
+
+export const ItemCardImageContent = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
 `;
 
 export const ItemCardIcon = styled.a`

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { color } from "../../../utils/styles/color";
-import { motion } from "framer-motion";
 import { SwiperSlide, Swiper } from "swiper/react";
 interface FlexRowProps {
   x: "start" | "center" | "end" | "between";
@@ -119,7 +118,7 @@ export const MobileMainHome = styled.div`
   margin-bottom: 60px;
 `;
 
-export const MobileTabPage = styled(motion.div)`
+export const MobileTabPage = styled.div`
   width: 100%;
   min-height: auto;
   background: ${color.white};

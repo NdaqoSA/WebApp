@@ -54,13 +54,9 @@ const MobileHome = () => {
         <FilterTab />
       </MobileHomeHeaderContainer>
       <MobileMainHome>
-        {activeTab === 1 ? (
-          <BuyTab />
-        ) : activeTab === 2 ? (
-          <RentTab />
-        ) : (
-          <ServiceTab />
-        )}
+        {activeTab === 1 && <BuyTab />}
+        {activeTab === 2 && <RentTab />}
+        {activeTab === 3 && <ServiceTab />}
       </MobileMainHome>
     </MobileHomeContainer>
   );

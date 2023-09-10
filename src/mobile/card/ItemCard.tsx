@@ -24,8 +24,8 @@ import {
   ItemCollectionButton,
   ItemVisitedButton,
 } from "../../components/layouts/shape/MobileItemCard";
-import Image from "../../assets/images/im4.jpg";
-import User from "../../assets/images/im1.jpg";
+import Image from "../../assets/images/house1.png";
+import User from "../../assets/images/user.png";
 import { Text } from "../../components/typo/Typo";
 // import Search from "../../components/icons/Search";
 import BedRoom from "../../components/icons/BedRoom";
