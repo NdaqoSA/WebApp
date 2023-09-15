@@ -54,7 +54,7 @@ const ItemCard = () => {
         </ItemCardImage>
         <LoctionInfos>
           <BuyButton>Acheter</BuyButton>
-          <Text size={18} weight={700} fill>
+          <Text size={15} weight={700} fill>
             Diata, Makélékélé, Brazzaville
           </Text>
         </LoctionInfos>
@@ -67,37 +67,37 @@ const ItemCard = () => {
               <HouseDetailContainer>
                 <HouseDetail>
                   <BedRoom w={24} h={16} />
-                  <Text size={12} weight={700}>
+                  <Text size={12} weight={700} fill>
                     3
                   </Text>
                 </HouseDetail>
                 <HouseDetail>
                   <Saloon w={13} h={15} />
-                  <Text size={12} weight={700}>
+                  <Text size={12} weight={700} fill>
                     1
                   </Text>
                 </HouseDetail>
                 <HouseDetail>
                   <BathRoom w={20} h={15} />
-                  <Text size={12} weight={700}>
+                  <Text size={12} weight={700} fill>
                     7
                   </Text>
                 </HouseDetail>
                 <HouseDetail>
                   <CookRoom w={27} h={18} />
-                  <Text size={12} weight={700}>
+                  <Text size={12} weight={700} fill>
                     2
                   </Text>
                 </HouseDetail>
                 <HouseDetail>
                   <SwimmingPool w={14} h={17} />
-                  <Text size={12} weight={700}>
+                  <Text size={12} weight={700} fill>
                     1
                   </Text>
                 </HouseDetail>
                 <HouseDetail>
                   <Surface w={16} h={15} />
-                  <Text size={12} weight={700}>
+                  <Text size={12} weight={700} fill>
                     750
                   </Text>
                 </HouseDetail>
@@ -109,18 +109,18 @@ const ItemCard = () => {
             <ItemCardInfosTextData>
               <ItemCardInfosTextContainer>
                 <ItemsCardInfosTextTop>
-                  <Text size={18} weight={700} fill>
+                  <Text size={16} weight={700} fill>
                     787 000 000 FCFA
                   </Text>
-                  <Text size={9} weight={700} fill>
+                  <Text size={11} weight={600} fill>
                     prix d'achat
                   </Text>
                 </ItemsCardInfosTextTop>
                 <ItemsCardInfosTextBottom>
-                  <Text>
-                    Werner Nabonne <Check w={16} h={16} />
+                  <Text size={12} weight={500}>
+                    Werner Nebonne <Check w={16} h={16} />
                   </Text>
-                  <Text size={8} weight={600}>
+                  <Text size={11} weight={400}>
                     •
                   </Text>
                   <Text size={12} weight={500}>

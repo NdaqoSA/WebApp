@@ -95,12 +95,14 @@ export const MobileHomeHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 55px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  height: 58px;
 `;
 
 export const FlagRounded = styled.img`
-  width: 35px;
-  height: 35px;
+  width: 33px;
+  height: 33px;
   border-radius: 35px;
   object-fit: cover;
   object-position: center center;
@@ -114,8 +116,12 @@ export const MobileMainHome = styled.div`
   flex-direction: column;
   position: relative;
   gap: 0;
-  margin-top: 210px;
   margin-bottom: 60px;
+`;
+
+export const SizeBox = styled.div`
+  width: 100%;
+  height: 196px;
 `;
 
 export const MobileTabPage = styled.div`

@@ -84,73 +84,36 @@ const MobileCategoryTab = ({ activeCategory }: Props) => {
           ref={tabRef}
         />
         <TabContent>
-          <Tab onClick={(e: React.SyntheticEvent) => switchTab(e, 1)}>
+          <Tab
+            onClick={(e: React.SyntheticEvent) => switchTab(e, 1)}
+            isActive={cursor === 1}
+          >
             <Text size={12} weight={700} ref={firstRef} nogap>
-              <span>V</span>
-              <span>i</span>
-              <span>d</span>
-              <span>e</span>
-              <span>o</span>
-              <span>s</span>
+              Videos
             </Text>
           </Tab>
-          <Tab onClick={(e: React.SyntheticEvent) => switchTab(e, 2)}>
+          <Tab
+            onClick={(e: React.SyntheticEvent) => switchTab(e, 2)}
+            isActive={cursor === 2}
+          >
             <Text size={12} weight={700} ref={secondRef} nogap>
-              <span>P</span>
-              <span>o</span>
-              <span>u</span>
-              <span>r</span>
-              <span>&nbsp;</span>
-              <span>t</span>
-              <span>o</span>
-              <span>i</span>
+              Pour toi
             </Text>
           </Tab>
-          <Tab onClick={(e: React.SyntheticEvent) => switchTab(e, 3)}>
+          <Tab
+            onClick={(e: React.SyntheticEvent) => switchTab(e, 3)}
+            isActive={cursor === 3}
+          >
             <Text size={12} weight={700} ref={thirdRef} nogap>
-              <span>P</span>
-              <span>o</span>
-              <span>p</span>
-              <span>u</span>
-              <span>l</span>
-              <span>a</span>
-              <span>i</span>
-              <span>r</span>
-              <span>e</span>
-              <span>&nbsp;</span>
-              <span>c</span>
-              <span>e</span>
-              <span>t</span>
-              <span>t</span>
-              <span>e</span>
-              <span>&nbsp;</span>
-              <span>s</span>
-              <span>e</span>
-              <span>m</span>
-              <span>a</span>
-              <span>i</span>
-              <span>n</span>
-              <span>e</span>
+              Populaire cette semaine
             </Text>
           </Tab>
-          <Tab onClick={(e: React.SyntheticEvent) => switchTab(e, 4)}>
+          <Tab
+            onClick={(e: React.SyntheticEvent) => switchTab(e, 4)}
+            isActive={cursor === 4}
+          >
             <Text size={12} weight={700} ref={fourthRef} nogap>
-              <span>P</span>
-              <span>r</span>
-              <span>i</span>
-              <span>x</span>
-              <span>&nbsp;</span>
-              <span>p</span>
-              <span>l</span>
-              <span>u</span>
-              <span>s</span>
-              <span>&nbsp;</span>
-              <span>é</span>
-              <span>l</span>
-              <span>e</span>
-              <span>v</span>
-              <span>é</span>
-              <span>s</span>
+              Prix plus élevés
             </Text>
           </Tab>
         </TabContent>

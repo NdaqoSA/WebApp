@@ -1,7 +1,6 @@
 import ItemCard from "../../../mobile/card/ItemCard";
 import {
   SwiperContainer,
-  SwiperSlideContainer,
   TabBox,
 } from "../../layouts/box/BoxLayout";
 import "swiper/css";
@@ -12,14 +11,7 @@ const BuyTab = () => {
   return (
     <TabBox>
       <SwiperContainer slidesPerView={"auto"} className="mySwiper">
-        <SwiperSlideContainer>
-          <ItemCard />
-        </SwiperSlideContainer>
-        <SwiperSlideContainer>
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
-        </SwiperSlideContainer>
+        <ItemCard />
       </SwiperContainer>
     </TabBox>
   );

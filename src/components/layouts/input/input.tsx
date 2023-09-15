@@ -143,7 +143,7 @@ export const FormInputContainer = styled.div<FormContainerProps>`
 `;
 
 export const PriceMobileButton = styled.button`
-  width: 70px;
+  width: 71px;
   height: 26px;
   line-height: 12px;
   border-radius: 7px;

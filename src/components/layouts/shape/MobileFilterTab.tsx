@@ -9,10 +9,12 @@ interface FilterProps {
 export const Container = styled.div`
   width: 100%;
   height: auto;
-  padding-block: 15px;
+  padding-top: 15px;
+  padding-bottom: 10px;
   padding-inline: 5px;
   background: ${color.white_trans_3};
   backdrop-filter: blur(7.5px);
+  border-bottom: 1px solid ${color.grey};
 `;
 
 export const SwiperContainer = styled(Swiper)``;

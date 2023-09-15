@@ -24,7 +24,7 @@ const FilterTab = () => {
     <Container>
       <SwiperContainer
         slidesPerView={"auto"}
-        spaceBetween={10}
+        spaceBetween={8}
         freeMode={true}
         pagination={{
           clickable: true,

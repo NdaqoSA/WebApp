@@ -6,23 +6,25 @@ export const ItemCardContainer = styled.div`
   height: auto;
   display: grid;
   grid-template-columns: 1fr;
-  border-bottom: 5px solid ${color.inactive_text};
+  border-bottom: 1px solid ${color.inactive_text};
 `;
 
 export const ItemCardContent = styled.div`
   width: 100%;
-  padding: 15px 5px;
+  padding-inline: 5px;
+  padding-top: 12.5px;
+  padding-bottom: 11px;
   display: flex;
   flex-direction: column;
 `;
 
 export const ItemCardImage = styled.div`
+  position: relative;
   width: 100%;
   height: 258px;
   border-radius: 17px;
   overflow: hidden;
   margin-bottom: 10px;
-  background: red;
 `;
 
 export const ItemCardImageContent = styled.div`
@@ -63,7 +65,7 @@ export const LoctionInfos = styled.div`
 `;
 
 export const BuyButton = styled.button`
-  width: 84px;
+  width: 106px;
   height: 25px;
   background-color: ${color["ndaqo-black"]};
   color: ${color.white};
@@ -72,13 +74,14 @@ export const BuyButton = styled.button`
   font-weight: 500;
   border: 1px solid ${color["ndaqo-black"]};
   border-radius: 7px;
+  outline: none;
 `;
 
 export const ItemCardInfos = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 70px 1fr;
-  gap: 5px;
+  gap: 7px;
 `;
 
 export const ItemCardUser = styled.div`
@@ -140,8 +143,14 @@ export const ItemCardInfosTextContainer = styled.div`
 
 export const ItemsCardInfosTextTop = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 3px;
+  margin-left: 5px;
+
+  & > p:last-child {
+    position: relative;
+    top: -2px;
+  }
 `;
 export const ItemsCardInfosTextBottom = styled.div`
   display: flex;
@@ -165,14 +174,14 @@ export const ItemCardButtonGroupContainer = styled.div`
   grid-template-columns: 2fr 1.5fr 3fr;
   gap: 10px;
   width: 100%;
-  height: 74px;
+  height: 59px;
 `;
 
 export const ItemCardButtonGroup = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
 `;
 
 const ItemCardButton = styled.button`

@@ -10,7 +10,8 @@ interface TabProps {
 export const Container = styled.div`
   width: 100%;
   height: 51px;
-  padding-top: 20px;
+  padding-top: 15px;
+  padding-bottom: 20px;
   padding-inline: 31px;
   display: flex;
   justify-content: center;
@@ -27,7 +28,6 @@ export const TabContainer = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
 `;
 
 export const TabContent = styled.div`

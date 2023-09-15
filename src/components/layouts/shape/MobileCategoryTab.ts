@@ -9,8 +9,7 @@ interface TabProps {
 
 export const Container = styled.div`
   width: 100%;
-  height: 29px;
-  margin-top: 15px;
+  height: 23px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,26 +29,27 @@ export const TabContainer = styled.div`
 
 export const TabContent = styled.div`
   width: 100%;
-  height: 23px;
+  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  /* padding-bottom: 4px; */
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 5px;
   gap: 15px;
 `;
 
-export const Tab = styled.div`
+export const Tab = styled.div<{ isActive: boolean }>`
+  position: relative;
+  top: ${({ isActive }) => (isActive ? "-3px" : "0")};
   width: fit-content;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  height: 100%;
-  /* background: #00001233; */
+  transition: linear 0.05s;
 
   & p {
-    transition: ease 0.4s;
-    position: relative;
-    z-index: 10;
+    color: ${({ isActive }) =>
+      !isActive ? color["ndaqo-black"] : color.blue_violet};
+    transition: linear 0.4s;
   }
 `;
 

@@ -6,6 +6,7 @@ import {
   MobileHomeHeaderGroup,
   MobileHomeHeaderTabContainer,
   MobileMainHome,
+  SizeBox,
 } from "../../components/layouts/box/BoxLayout";
 import Flag from "../../assets/images/Congo flag circle.svg";
 import { PriceMobileButton } from "../../components/layouts/input/input";
@@ -54,6 +55,7 @@ const MobileHome = () => {
         <FilterTab />
       </MobileHomeHeaderContainer>
       <MobileMainHome>
+        <SizeBox />
         {activeTab === 1 && <BuyTab />}
         {activeTab === 2 && <RentTab />}
         {activeTab === 3 && <ServiceTab />}
