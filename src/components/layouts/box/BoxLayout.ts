@@ -83,6 +83,7 @@ export const MobileHomeHeaderGroup = styled.div`
 `;
 
 export const MobileHomeHeaderTabContainer = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
   background: ${color.white};

@@ -15,6 +15,11 @@ const Logo = (props: Props) => (
     height={props.h}
     fill="none"
     {...props}
+    style={{
+      position: "absolute",
+      left: "50%",
+      transform: "translateX(-50%)",
+    }}
   >
     <path
       fill={props.white ? color["ndaqo-white"] : color["ndaqo-black"]}
