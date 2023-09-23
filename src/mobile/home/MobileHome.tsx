@@ -24,7 +24,6 @@ import ServiceTab from "../../components/tab/section/ServiceTab";
 import MobileCategoryTab from "../../components/tab/MobileCategoryTab";
 import FilterTab from "../filterTab/FilterTab";
 import { Text } from "../../components/typo/Typo";
-import ArrowDown from "../../components/icons/ArrowDown";
 import SmallArrowDown from "../../components/icons/SmallArrow";
 
 const MobileHome = () => {
