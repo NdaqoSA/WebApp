@@ -122,4 +122,23 @@ const MobileCategoryTab = ({ activeCategory }: Props) => {
   );
 };
 
+const filters = [
+  {
+    id: 1,
+    name: "Videos",
+  },
+  {
+    id: 2,
+    name: "Pour toi",
+  },
+  {
+    id: 3,
+    name: "Populaire cette semaine",
+  },
+  {
+    id: 4,
+    name: "Prix plus élevés",
+  },
+];
+
 export default MobileCategoryTab;

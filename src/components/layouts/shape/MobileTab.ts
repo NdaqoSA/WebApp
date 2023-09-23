@@ -11,7 +11,7 @@ export const Container = styled.div`
   width: 100%;
   height: 51px;
   padding-top: 15px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   padding-inline: 31px;
   display: flex;
   justify-content: center;
@@ -35,6 +35,29 @@ export const TabContent = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+
+  & > div:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1px;
+    height: 17px;
+    background: ${color.grey_trans};
+    z-index: 10;
+    transform: translateY(-50%);
+  }
+  & > div:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 1px;
+    height: 17px;
+    background: ${color.grey_trans};
+    z-index: 10;
+    transform: translateY(-50%);
+  }
 `;
 
 export const Tab = styled.div`
@@ -45,6 +68,7 @@ export const Tab = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   & p {
     transition: ease 0.4s;
     position: relative;

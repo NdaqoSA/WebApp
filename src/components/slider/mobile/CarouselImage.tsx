@@ -10,7 +10,6 @@ import {
   ItemCardImage,
   //   ItemCardImageContent,
 } from "../../layouts/shape/MobileItemCard";
-// import TripleDots from "../../icons/TripleDots";
 import styled from "styled-components";
 
 interface Props {

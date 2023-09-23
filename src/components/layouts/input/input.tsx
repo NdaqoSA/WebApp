@@ -144,12 +144,32 @@ export const FormInputContainer = styled.div<FormContainerProps>`
 
 export const PriceMobileButton = styled.button`
   width: 71px;
-  height: 26px;
-  line-height: 12px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  gap: 10px;
+  border: 1px solid ${color.hard_grey};
   border-radius: 7px;
-  border: none;
-  background: ${color.dark_grey};
-  color: ${color.white};
-  font-size: 12px;
-  font-weight: 600;
+  background: transparent;
+  & * {
+    color: ${color.white};
+    fill: ${color.white};
+  }
+`;
+export const LangMobileButton = styled.button`
+  width: 79px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid ${color.hard_grey};
+  border-radius: 7px;
+  background: transparent;
+  & * {
+    color: ${color.white};
+    fill: ${color.white};
+  }
 `;

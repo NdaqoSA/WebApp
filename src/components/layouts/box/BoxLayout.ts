@@ -92,21 +92,32 @@ export const MobileHomeHeaderTabContainer = styled.div`
 
 export const MobileHomeHeader = styled.div`
   margin-top: 0;
-  margin-inline: 22px;
+  margin-inline: 21px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 15px;
-  padding-bottom: 10px;
-  height: 58px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  height: 60px;
 `;
 
 export const FlagRounded = styled.img`
-  width: 33px;
-  height: 33px;
+  width: 15px;
+  height: 15px;
   border-radius: 35px;
   object-fit: cover;
   object-position: center center;
+`;
+
+export const FlagBox = styled.div`
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 5px;
+
+  & > p {
+    line-height: 0;
+  }
 `;
 
 export const MobileMainHome = styled.div`

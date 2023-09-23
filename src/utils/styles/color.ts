@@ -34,4 +34,5 @@ export const color = {
   blue_violet: "#001EC8",
   light_grey: "#F7F8FC",
   fade_blue_n: "#e5edf9",
+  hard_grey: "rgba(255, 255, 255, 0.2)",
 };

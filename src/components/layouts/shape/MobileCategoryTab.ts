@@ -33,14 +33,12 @@ export const TabContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 3px;
-  padding-bottom: 5px;
+  padding-bottom: 8px;
   gap: 15px;
 `;
 
 export const Tab = styled.div<{ isActive: boolean }>`
   position: relative;
-  top: ${({ isActive }) => (isActive ? "-3px" : "0")};
   width: fit-content;
   display: flex;
   justify-content: center;
@@ -50,6 +48,7 @@ export const Tab = styled.div<{ isActive: boolean }>`
     color: ${({ isActive }) =>
       !isActive ? color["ndaqo-black"] : color.blue_violet};
     transition: linear 0.4s;
+    line-height: 0;
   }
 `;
 
