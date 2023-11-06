@@ -1,30 +1,35 @@
 import { SVGProps } from "react";
-import { color } from "../../utils/styles/color";
 
 interface Props {
   svg?: SVGProps<SVGSVGElement>;
   w: number;
   h: number;
-  white?: true;
+  color?: string;
 }
 
-const Logo = (props: Props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={props.w}
-    height={props.h}
-    fill="none"
-    {...props}
-    style={{
-      position: "absolute",
-      left: "50%",
-      transform: "translateX(-50%)",
-    }}
-  >
-    <path
-      fill={props.white ? color["ndaqo-white"] : color["ndaqo-black"]}
-      d="M21.33.804a3.328 3.328 0 0 1 4.34 0l20.16 17.318C48.18 20.14 46.754 24 43.66 24H3.34c-3.095 0-4.52-3.86-2.17-5.878L21.33.804ZM33.684 1.006a2.847 2.847 0 0 1 4.027-.319L59 18.95a2.878 2.878 0 0 1 .317 4.044 2.847 2.847 0 0 1-4.027.319L34 5.05a2.878 2.878 0 0 1-.317-4.044ZM45.684 1.006a2.847 2.847 0 0 1 4.027-.319L71 18.95a2.878 2.878 0 0 1 .317 4.044 2.847 2.847 0 0 1-4.027.319L46 5.05a2.878 2.878 0 0 1-.317-4.044Z"
-    />
-  </svg>
-);
+const Logo = (props: Props) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={props.w}
+      height={props.h}
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M21.7841 0.8379C23.0592 -0.279302 24.9408 -0.279299 26.2159 0.837904L46.8042 18.877C49.2043 20.9799 47.7494 25 44.5883 25H3.41168C0.250585 25 -1.20426 20.9798 1.19582 18.8769L21.7841 0.8379Z"
+        fill={props.color ? props.color : "#0E0E1A"}
+      />
+      <path
+        d="M34.7097 1.04763C35.7721 -0.207362 37.6417 -0.355816 38.8856 0.716051L60.9616 19.7392C62.2055 20.8111 62.3527 22.6974 61.2903 23.9524C60.2279 25.2074 58.3583 25.3558 57.1144 24.2839L35.0384 5.26079C33.7945 4.18892 33.6473 2.30263 34.7097 1.04763Z"
+        fill={props.color ? props.color : "#0E0E1A"}
+      />
+      <path
+        d="M46.7097 1.04763C47.7721 -0.207362 49.6417 -0.355816 50.8856 0.716051L72.9616 19.7392C74.2055 20.8111 74.3527 22.6974 73.2903 23.9524C72.2279 25.2074 70.3583 25.3558 69.1144 24.2839L47.0384 5.26079C45.7945 4.18892 45.6473 2.30263 46.7097 1.04763Z"
+        fill={props.color ? props.color : "#0E0E1A"}
+      />
+    </svg>
+  );
+};
+
 export default Logo;
