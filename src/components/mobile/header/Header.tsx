@@ -1,4 +1,4 @@
-import ButtonIcon from "@/components/buttons/ButtonIcon";
+import IconButton from "@/components/buttons/IconButton";
 import DataCenter from "@/components/icons/DataCenter";
 import Flag from "@/components/icons/Flag";
 import Logo from "@/components/icons/Logo";
@@ -16,20 +16,20 @@ export default function Header() {
         <Logo w={74} h={25} />
       </Box>
       <Flex justify="between">
-        <ButtonIcon>
+        <IconButton>
           <DataCenter w={17} h={15} />
           <VerticalArrow w={8} h={13} />
-        </ButtonIcon>
+        </IconButton>
         <Flex className="flex gap-x-[10px]">
-          <ButtonIcon>
+          <IconButton>
             <Text size="2" weight="bold">
               CG
             </Text>
             <Flag w={15} h={15} />
-          </ButtonIcon>
-          <ButtonIcon>
+          </IconButton>
+          <IconButton>
             <Search w={15} h={15} />
-          </ButtonIcon>
+          </IconButton>
         </Flex>
       </Flex>
     </Container>

@@ -5,6 +5,7 @@ import "@radix-ui/themes/styles.css";
 import { Theme, ThemePanel } from "@radix-ui/themes";
 import Header from "@/components/mobile/header/Header";
 import TabMenu from "@/components/mobile/tab/TabMenu";
+import TabProvider from "@/contexts/TabContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Theme appearance="dark">
-          <ThemePanel/>
+        <Theme appearance="light">
+          {/* <ThemePanel/> */}
           <Header />
-          <TabMenu />
-          {children}
+          <TabProvider>
+            <TabMenu />
+            {children}
+          </TabProvider>
         </Theme>
       </body>
     </html>

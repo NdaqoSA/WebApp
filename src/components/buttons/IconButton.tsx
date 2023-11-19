@@ -5,7 +5,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const ButtonIcon = ({ children }: Props) => {
+const IconButton = ({ children }: Props) => {
   return (
     <Box className="w-[57px] h-[31px] rounded-[10px] bg-gray-100 flex justify-center items-center gap-x-1 ">
       {children}
@@ -13,4 +13,4 @@ const ButtonIcon = ({ children }: Props) => {
   );
 };
 
-export default ButtonIcon;
+export default IconButton;
